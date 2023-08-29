@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import { Button, Checkbox, IconButton, List, ListItem } from '@mui/material'
+import { Button, Checkbox, IconButton, List, ListItem, Typography } from '@mui/material'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 
 import { FilterValuesType } from './App'
@@ -43,9 +43,10 @@ export function Todolist(props: PropsType) {
 	const onCompletedClickHandler = () => props.changeFilter('completed', props.id)
 
 	return <div>
-		<h3><EditableSpan value={props.title} onChange={changeTodolistTitle} />
+		<Typography variant='h5' align='center' sx={{ fontWeight: 'bold' }}>
+			<EditableSpan value={props.title} onChange={changeTodolistTitle} />
 			<IconButton onClick={removeTodolist}><DeleteForeverIcon /></IconButton>
-		</h3>
+		</Typography>
 		<AddItemForm addItem={addTask} />
 		<List>
 			{
@@ -68,7 +69,7 @@ export function Todolist(props: PropsType) {
 				})
 			}
 		</List>
-		<div>
+		<div style={{ gap: 1 }}>
 			<Button
 				sx={{ mr: '2px' }}
 				variant='contained'

@@ -6,9 +6,9 @@ type AddItemFormPropsType = {
 }
 
 export function AddItemForm(props: AddItemFormPropsType) {
+
 	let [title, setTitle] = useState('')
-	let [error, setError] = useState<string>('')
-	
+	let [error, setError] = useState<string | null>(null)
 	const addItem = () => {
 		if (title.trim() !== '') {
 			props.addItem(title)
@@ -33,13 +33,13 @@ export function AddItemForm(props: AddItemFormPropsType) {
 		<TextField
 			sx={{ mr: '5px' }}
 			size='small'
-			error={error}
-			helperText={error}
 			value={title}
 			onChange={onChangeHandler}
 			onKeyPress={onKeyPressHandler}
 			className={error ? 'error' : ''}
 		/>
 		<button onClick={addItem}>+</button>
+
+		{error && <div className='error-message'>{error}</div>}
 	</div>
 }
