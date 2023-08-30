@@ -42,7 +42,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 			onChange={onChangeHandler}
 			onKeyPress={onKeyPressHandler}
 		/>
-		<Button onClick={addItem} variant='contained' size='medium'>
+		<Button onClick={addItem} variant='contained' color='secondary' size='medium'>
 			<Add />
 		</Button>
 	</div>

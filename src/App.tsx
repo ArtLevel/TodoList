@@ -3,8 +3,21 @@ import './App.css'
 import { TaskType, Todolist } from './Todolist'
 import { v1 } from 'uuid'
 import { AddItemForm } from './AddItemForm'
-import { AppBar, Box, Button, Container, Grid, IconButton, Paper, Toolbar, Typography } from '@mui/material'
+import {
+	AppBar,
+	Box,
+	Button,
+	Container,
+	createTheme,
+	Grid,
+	IconButton,
+	Paper,
+	ThemeProvider,
+	Toolbar,
+	Typography
+} from '@mui/material'
 import { Menu } from '@mui/icons-material'
+import { amber, teal } from '@mui/material/colors'
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
 type TodolistType = {
@@ -18,6 +31,32 @@ type TasksStateType = {
 }
 
 function App() {
+	let todolistId1 = v1()
+	let todolistId2 = v1()
+
+	let [todolists, setTodolists] = useState<Array<TodolistType>>([
+		{ id: todolistId1, title: 'What to learn', filter: 'all' },
+		{ id: todolistId2, title: 'What to buy', filter: 'all' }
+	])
+	let [tasks, setTasks] = useState<TasksStateType>({
+		[todolistId1]: [
+			{ id: v1(), title: 'HTML&CSS', isDone: true },
+			{ id: v1(), title: 'JS', isDone: true }
+		],
+		[todolistId2]: [
+			{ id: v1(), title: 'Milk', isDone: true },
+			{ id: v1(), title: 'React Book', isDone: true }
+		]
+	})
+	const [lightMode, setLightMode] = useState(true)
+
+	const theme = createTheme(({
+		palette: {
+			primary: teal,
+			secondary: amber
+		}
+	}))
+
 	function removeTask(id: string, todolistId: string) {
 		//достанем нужный массив по todolistId:
 		let todolistTasks = tasks[todolistId]
@@ -90,25 +129,6 @@ function App() {
 		}
 	}
 
-	let todolistId1 = v1()
-	let todolistId2 = v1()
-
-	let [todolists, setTodolists] = useState<Array<TodolistType>>([
-		{ id: todolistId1, title: 'What to learn', filter: 'all' },
-		{ id: todolistId2, title: 'What to buy', filter: 'all' }
-	])
-
-	let [tasks, setTasks] = useState<TasksStateType>({
-		[todolistId1]: [
-			{ id: v1(), title: 'HTML&CSS', isDone: true },
-			{ id: v1(), title: 'JS', isDone: true }
-		],
-		[todolistId2]: [
-			{ id: v1(), title: 'Milk', isDone: true },
-			{ id: v1(), title: 'React Book', isDone: true }
-		]
-	})
-
 	function addTodolist(title: string) {
 		let newTodolistId = v1()
 		let newTodolist: TodolistType = { id: newTodolistId, title: title, filter: 'all' }
@@ -118,6 +138,8 @@ function App() {
 			[newTodolistId]: []
 		})
 	}
+
+	const toggleTheme = () => setLightMode(prevState => !prevState)
 
 	const todolistsMapped = todolists.map(tl => {
 		let allTodolistTasks = tasks[tl.id]
@@ -150,30 +172,35 @@ function App() {
 	})
 
 	return (
-		<div className='App'>
-			<Box>
-				<AppBar position='static'>
-					<Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-						<IconButton edge='start' color='inherit' aria-label='menu'>
-							<Menu />
-						</IconButton>
-						<Typography variant='h6'>
-							TodoList
-						</Typography>
-						<Button color='inherit'>{}</Button>
-						<Button color='inherit'>Login</Button>
-					</Toolbar>
-				</AppBar>
-			</Box>
-			<Container fixed>
-				<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
-					<AddItemForm addItem={addTodolist} />
-				</Grid>
-				<Grid container spacing={10}>
-					{todolistsMapped}
-				</Grid>
-			</Container>
-		</div>
+		<ThemeProvider theme={theme}>
+			<div className='App'>
+				<Box>
+					<AppBar position='static'>
+						<Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+							<Typography variant='h6'>
+								<IconButton edge='start' color='inherit' aria-label='menu'>
+									<Menu />
+								</IconButton>
+								TodoList
+							</Typography>
+							<Box sx={{ display: 'flex', gap: '20px' }}>
+								<Button color='inherit' variant='outlined'
+								        onClick={toggleTheme}>{lightMode ? 'Set Dark' : 'Set Light'}</Button>
+								<Button color='inherit' variant='outlined'>Login</Button>
+							</Box>
+						</Toolbar>
+					</AppBar>
+				</Box>
+				<Container fixed>
+					<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+						<AddItemForm addItem={addTodolist} />
+					</Grid>
+					<Grid container spacing={10}>
+						{todolistsMapped}
+					</Grid>
+				</Container>
+			</div>
+		</ThemeProvider>
 	)
 }
 
