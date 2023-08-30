@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react'
 import { FilterValuesType } from './App'
 import { AddItemForm } from './AddItemForm'
 import { EditableSpan } from './EditableSpan'
-import { Button, Checkbox, IconButton, List, ListItem } from '@mui/material'
+import { Box, Button, Checkbox, IconButton, List, ListItem } from '@mui/material'
 import { DeleteForever } from '@mui/icons-material'
 
 export type TaskType = {
@@ -68,24 +68,26 @@ export function Todolist(props: PropsType) {
 				})
 			}
 		</List>
-		<div>
+		<Box sx={{ display: 'flex', gap: '10px' }}>
 			<Button
-				color='secondary'
+				color={props.filter === 'all' ? 'secondary' : 'primary'}
 				size='small'
-				variant={props.filter === 'all' ? 'contained' : 'outlined'}
+				variant='contained'
 				onClick={onAllClickHandler}>All
 			</Button>
 			<Button
-				color='secondary'
-				variant={props.filter === 'active' ? 'contained' : 'outlined'}
+				color={props.filter === 'active' ? 'secondary' : 'primary'}
+				size='small'
+				variant='contained'
 				onClick={onActiveClickHandler}>Active
 			</Button>
 			<Button
-				color='secondary'
-				variant={props.filter === 'completed' ? 'contained' : 'outlined'}
+				color={props.filter === 'completed' ? 'secondary' : 'primary'}
+				size='small'
+				variant='contained'
 				onClick={onCompletedClickHandler}>Completed
 			</Button>
-		</div>
+		</Box>
 	</div>
 }
 

@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material'
+import { Box, Button, TextField } from '@mui/material'
 import React, { ChangeEvent, KeyboardEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
 
@@ -31,7 +31,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 		}
 	}
 
-	return <div>
+	return <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px' }}>
 		<TextField
 			size='small'
 			variant='outlined'
@@ -45,5 +45,5 @@ export function AddItemForm(props: AddItemFormPropsType) {
 		<Button onClick={addItem} variant='contained' color='secondary' size='medium'>
 			<Add />
 		</Button>
-	</div>
+	</Box>
 }

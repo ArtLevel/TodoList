@@ -53,7 +53,8 @@ function App() {
 	const theme = createTheme(({
 		palette: {
 			primary: teal,
-			secondary: amber
+			secondary: amber,
+			mode: lightMode ? 'light' : 'dark'
 		}
 	}))
 
@@ -173,33 +174,32 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<div className='App'>
-				<Box>
-					<AppBar position='static'>
-						<Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-							<Typography variant='h6'>
-								<IconButton edge='start' color='inherit' aria-label='menu'>
-									<Menu />
-								</IconButton>
-								TodoList
-							</Typography>
-							<Box sx={{ display: 'flex', gap: '20px' }}>
-								<Button color='inherit' variant='outlined'
-								        onClick={toggleTheme}>{lightMode ? 'Set Dark' : 'Set Light'}</Button>
-								<Button color='inherit' variant='outlined'>Login</Button>
-							</Box>
-						</Toolbar>
-					</AppBar>
-				</Box>
-				<Container fixed>
-					<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
-						<AddItemForm addItem={addTodolist} />
-					</Grid>
-					<Grid container spacing={10}>
-						{todolistsMapped}
-					</Grid>
-				</Container>
-			</div>
+			<Box>
+				<AppBar position='static'>
+					<Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+						<Typography variant='h6'>
+							<IconButton edge='start' color='inherit' aria-label='menu'>
+								<Menu />
+							</IconButton>
+							TodoList
+						</Typography>
+						<Box sx={{ display: 'flex', gap: '20px' }}>
+							<Button color='inherit' variant='outlined'
+							        onClick={toggleTheme}>{lightMode ? 'Set Dark' : 'Set Light'}</Button>
+							<Button color='inherit' variant='outlined'>Login</Button>
+						</Box>
+					</Toolbar>
+				</AppBar>
+			</Box>
+			<Container fixed>
+				<Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+					<AddItemForm addItem={addTodolist} />
+				</Grid>
+				<Grid container spacing={10}>
+					{todolistsMapped}
+				</Grid>
+			</Container>
+
 		</ThemeProvider>
 	)
 }
