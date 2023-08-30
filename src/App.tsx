@@ -9,6 +9,7 @@ import {
 	Button,
 	Container,
 	createTheme,
+	CssBaseline,
 	Grid,
 	IconButton,
 	Paper,
@@ -174,6 +175,7 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
+			<CssBaseline />
 			<Box>
 				<AppBar position='static'>
 					<Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -199,7 +201,6 @@ function App() {
 					{todolistsMapped}
 				</Grid>
 			</Container>
-
 		</ThemeProvider>
 	)
 }
