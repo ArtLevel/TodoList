@@ -16,7 +16,6 @@ test('correct todoList should be removed', () => {
 	expect(endState.length).toBe(1)
 	expect(endState[0].id).toBe(todoListId2)
 })
-
 test('correct todoList should be removed', () => {
 	const todoListId1 = v1()
 	const todoListId2 = v1()
@@ -34,7 +33,6 @@ test('correct todoList should be removed', () => {
 	expect(endState[2].title).toBe(newTodoListTitle)
 	expect(endState[2].filter).toBe('all')
 })
-
 test('correct todoList should change its name', () => {
 	const todoListId1 = v1()
 	const todoListId2 = v1()
