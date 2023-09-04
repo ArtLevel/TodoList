@@ -59,7 +59,7 @@ function App() {
 		}
 	}))
 
-	function removeTask(id: string, todolistId: string) {
+	const removeTask = (id: string, todolistId: string) => {
 		//достанем нужный массив по todolistId:
 		let todolistTasks = tasks[todolistId]
 		// перезапишем в этом объекте массив для нужного тудулиста отфилтрованным массивом:
@@ -68,7 +68,7 @@ function App() {
 		setTasks({ ...tasks })
 	}
 
-	function addTask(title: string, todolistId: string) {
+	const addTask = (title: string, todolistId: string) => {
 		let task = { id: v1(), title: title, isDone: false }
 		//достанем нужный массив по todolistId:
 		let todolistTasks = tasks[todolistId]
@@ -78,7 +78,7 @@ function App() {
 		setTasks({ ...tasks })
 	}
 
-	function changeFilter(value: FilterValuesType, todolistId: string) {
+	const changeFilter = (value: FilterValuesType, todolistId: string) => {
 		let todolist = todolists.find(tl => tl.id === todolistId)
 		if (todolist) {
 			todolist.filter = value
@@ -86,7 +86,7 @@ function App() {
 		}
 	}
 
-	function changeStatus(id: string, isDone: boolean, todolistId: string) {
+	const changeStatus = (id: string, isDone: boolean, todolistId: string) => {
 		//достанем нужный массив по todolistId:
 		let todolistTasks = tasks[todolistId]
 		// найдём нужную таску:
@@ -99,7 +99,7 @@ function App() {
 		}
 	}
 
-	function changeTaskTitle(id: string, newTitle: string, todolistId: string) {
+	const changeTaskTitle = (id: string, newTitle: string, todolistId: string) => {
 		//достанем нужный массив по todolistId:
 		let todolistTasks = tasks[todolistId]
 		// найдём нужную таску:
@@ -112,7 +112,7 @@ function App() {
 		}
 	}
 
-	function removeTodolist(id: string) {
+	const removeTodolist = (id: string) => {
 		// засунем в стейт список тудулистов, id которых не равны тому, который нужно выкинуть
 		setTodolists(todolists.filter(tl => tl.id != id))
 		// удалим таски для этого тудулиста из второго стейта, где мы храним отдельно таски
@@ -121,7 +121,7 @@ function App() {
 		setTasks({ ...tasks })
 	}
 
-	function changeTodolistTitle(id: string, title: string) {
+	const changeTodolistTitle = (id: string, title: string) => {
 		// найдём нужный todolist
 		const todolist = todolists.find(tl => tl.id === id)
 		if (todolist) {
@@ -131,7 +131,7 @@ function App() {
 		}
 	}
 
-	function addTodolist(title: string) {
+	const addTodolist = (title: string) => {
 		let newTodolistId = v1()
 		let newTodolist: TodolistType = { id: newTodolistId, title: title, filter: 'all' }
 		setTodolists([newTodolist, ...todolists])
