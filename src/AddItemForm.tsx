@@ -7,9 +7,8 @@ type AddItemFormPropsType = {
 }
 
 export function AddItemForm(props: AddItemFormPropsType) {
-
-	let [title, setTitle] = useState('')
-	let [error, setError] = useState<string | null>(null)
+	const [title, setTitle] = useState('')
+	const [error, setError] = useState<string | null>(null)
 
 	const addItem = () => {
 		if (title.trim() !== '') {
