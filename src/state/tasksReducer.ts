@@ -13,9 +13,17 @@ type AddTaskActionT = {
 	todoListId: string
 }
 
+type changeTaskActionT = {
+	type: 'CHANGE_TASK'
+	taskId: string
+	isDone: boolean
+	todoListId: string
+}
+
 export type ActionsType =
 	RemoveTaskActionT
 	| AddTaskActionT
+	| changeTaskActionT
 export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
 	switch (action.type) {
 		case 'REMOVE_TASK':
@@ -25,6 +33,14 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
 				...state,
 				[action.todoListId]: [{ id: v1(), title: action.title, isDone: false }, ...state[action.todoListId]]
 			}
+		case 'CHANGE_TASK': {
+			return { ...state,
+				[action.todoListId]: state[action.todoListId].map(t => t.id === action.taskId ? {
+					...t,
+					isDone: action.isDone
+				} : t)
+			}
+		}
 		default:
 			throw new Error(`I don't understand this action type`)
 	}
@@ -40,4 +56,11 @@ export const addTaskAC = (title: string, todoListId: string): AddTaskActionT => 
 	type: 'ADD_TASK',
 	todoListId,
 	title
+})
+
+export const changeTaskStatusAC = (taskId: string, isDone: boolean, todoListId: string): changeTaskActionT => ({
+	type: 'CHANGE_TASK',
+	taskId,
+	isDone,
+	todoListId
 })
