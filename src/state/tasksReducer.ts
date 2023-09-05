@@ -1,6 +1,6 @@
 import { TasksStateType } from '../App'
 import { v1 } from 'uuid'
-import { AddTodoListActionType } from './todoListsReducer'
+import { AddTodoListActionType, RemoveTodoListActionType } from './todoListsReducer'
 
 type RemoveTaskActionT = {
 	type: 'REMOVE_TASK'
@@ -14,14 +14,14 @@ type AddTaskActionT = {
 	todoListId: string
 }
 
-type changeTaskStatusActionT = {
+type ChangeTaskStatusActionT = {
 	type: 'CHANGE_TASK_STATUS'
 	taskId: string
 	isDone: boolean
 	todoListId: string
 }
 
-type changeTaskTitleActionT = {
+type ChangeTaskTitleActionT = {
 	type: 'CHANGE_TASK_TITLE'
 	taskId: string
 	newTitle: string
@@ -31,9 +31,10 @@ type changeTaskTitleActionT = {
 export type ActionsType =
 	RemoveTaskActionT
 	| AddTaskActionT
-	| changeTaskStatusActionT
-	| changeTaskTitleActionT
+	| ChangeTaskStatusActionT
+	| ChangeTaskTitleActionT
 	| AddTodoListActionType
+	| RemoveTodoListActionType
 
 export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksStateType => {
 	switch (action.type) {
@@ -61,8 +62,13 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
 					title: action.newTitle
 				} : t)
 			}
-		case 'ADD-TODOLIST':
+		case 'ADD_TODOLIST':
 			return { [action.todoListId]: [], ...state }
+		case 'REMOVE_TODOLIST': {
+			const stateCopy = { ...state }
+			delete stateCopy[action.id]
+			return stateCopy
+		}
 		default:
 			throw new Error(`I don't understand this action type`)
 	}
@@ -80,14 +86,14 @@ export const addTaskAC = (title: string, todoListId: string): AddTaskActionT => 
 	title
 })
 
-export const changeTaskStatusAC = (taskId: string, isDone: boolean, todoListId: string): changeTaskStatusActionT => ({
+export const changeTaskStatusAC = (taskId: string, isDone: boolean, todoListId: string): ChangeTaskStatusActionT => ({
 	type: 'CHANGE_TASK_STATUS',
 	taskId,
 	isDone,
 	todoListId
 })
 
-export const changeTaskTitleAC = (taskId: string, newTitle: string, todoListId: string): changeTaskTitleActionT => ({
+export const changeTaskTitleAC = (taskId: string, newTitle: string, todoListId: string): ChangeTaskTitleActionT => ({
 	type: 'CHANGE_TASK_TITLE',
 	taskId,
 	newTitle,
