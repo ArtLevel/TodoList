@@ -62,7 +62,7 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
 				} : t)
 			}
 		case 'ADD-TODOLIST':
-			return { [v1()]: [], ...state }
+			return { [action.todoListId]: [], ...state }
 		default:
 			throw new Error(`I don't understand this action type`)
 	}
