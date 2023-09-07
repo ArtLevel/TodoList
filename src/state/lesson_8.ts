@@ -10,12 +10,14 @@ export const sum = (...nums: number[]): number => nums.reduce((acc, num) => acc 
 //  - "11", если треугольник обычный,
 //  - "00", если такого треугольника не существует
 
-export function getTriangleType(a: number, b: number, c: number): string {
-	if (a + b < c || a + c < b || b + c < a) return '00'
-	if (a === b && a === c && b === c) return '10'
-	if (a === b || a === c || b === c) return '01'
-	return '11'
-}
+export const getTriangleType = (a: number, b: number, c: number): string => a + b < c || a + c < b || b + c < a ? '00' : a === b && a === c ? '10' : a === b || a === c || b === c ? '01' : '11'
+
+// export function getTriangleType(a: number, b: number, c: number): string {
+// 	if (a + b < c || a + c < b || b + c < a) return '00'
+// 	if (a === b && a === c && b === c) return '10'
+// 	if (a === b || a === c || b === c) return '01'
+// 	return '11'
+// }
 
 // 3. Функция getSum принимает параметром целое число и возвращает
 // сумму цифр этого числа
@@ -27,14 +29,16 @@ export const getSum = (number: number): number => String(number).split('').reduc
 // суммы чисел с нечётными ИНДЕКСАМИ!!!, то функция возвращает true.
 // В противном случае - false.
 
-export const isEvenIndexSumGreater = (arr: number[]): boolean => {
-	let evenIndexSum = 0
-	let oddIndexSum = 0
+// export const isEvenIndexSumGreater = (arr: number[]): boolean => {
+// 	let evenIndexSum = 0
+// 	let oddIndexSum = 0
+//
+// 	arr.forEach((el, i) => i % 2 === 0 ? evenIndexSum += el : oddIndexSum += el)
+//
+// 	return evenIndexSum > oddIndexSum
+// }
 
-	arr.forEach((el, i) => i % 2 === 0 ? evenIndexSum += el : oddIndexSum += el)
-
-	return evenIndexSum > oddIndexSum
-}
+export const isEvenIndexSumGreater = (arr: number[]): boolean => arr.filter((el, i) => i % 2 === 0).reduce((acc, num) => acc + num, 0) > arr.filter((el, i) => i % 2 !== 0).reduce((acc, num) => acc + num, 0)
 
 // 5. Функция getSquarePositiveIntegers принимает параметром массив чисел и возвращает новый массив.
 // Новый массив состоит из квадратов целых положительных чисел, котрые являются элементами исходгого массива.
