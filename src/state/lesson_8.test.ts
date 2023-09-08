@@ -1,5 +1,5 @@
 import {
-	getBanknoteList,
+	getBanknoteList1,
 	getSquarePositiveIntegers,
 	getSum,
 	getTriangleType,
@@ -56,9 +56,9 @@ test('sum of first N numbers', () => {
 //
 test('get banknote list', () => {
 	// надо бы проверять длинну резалтов и их сумму
-	const result2500 = getBanknoteList(2500)
-	const result23 = getBanknoteList(23)
-	const result12 = getBanknoteList(12)
+	const result2500 = getBanknoteList1(2500)
+	const result23 = getBanknoteList1(23)
+	const result12 = getBanknoteList1(12)
 
 	expect(result2500[0]).toBe(1000)
 	expect(result2500[1]).toBe(1000)

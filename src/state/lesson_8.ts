@@ -64,11 +64,11 @@ export const sumFirstNumbers = (N: number): number => {
 // const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1].
 // Считаем, что количество банкнот каждого номинала не ограничено
 
-export const getBanknoteList = (amountOfMoney: number): number[] => {
+export const getBanknoteList1 = (amountOfMoney: number): number[] => {
 	const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
 	const result = []
 	let i = 0
-	
+
 	while (i < banknotes.length) {
 		const countBanknote = Math.floor(amountOfMoney / banknotes[i])
 
@@ -96,4 +96,17 @@ export const getBanknoteList = (amountOfMoney: number): number[] => {
 // 		i++
 // 	}
 // 	return res
+// }
+
+// export const getBanknoteList1 = (amountOfMoney: number): Array<number> => {
+// 	const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+// 	const result = []
+//
+// 	for (const b of banknotes) {
+// 		while (amountOfMoney >= b) {
+// 			result.push(b)
+// 			amountOfMoney -= b
+// 		}
+// 	}
+// 	return result
 // }

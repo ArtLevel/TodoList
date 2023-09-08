@@ -1,5 +1,19 @@
-const isEvenIndexSumGreater = (arr) => {
-	return arr.filter((el, i) => i % 2 === 0 && Number.isInteger(i)).reduce((acc, num) => acc + num, 0) > arr.reduce((acc, num) => acc + num, 0)
+const getBanknoteList = (amountOfMoney) => {
+	const banknotes = [1000, 500, 100, 50, 20, 10, 5, 2, 1]
+	const result = []
+	let i = 0
+
+	while (i < banknotes.length) {
+		const countBanknote = Math.floor(amountOfMoney / banknotes[i])
+
+		if (countBanknote >= 1 && amountOfMoney) {
+			result.push(banknotes[i])
+			amountOfMoney -= banknotes[i]
+			i = 0
+		} else i++
+	}
+
+	return result
 }
 
-console.log(isEvenIndexSumGreater([1, 100, 2, 200]))
+console.log(getBanknoteList(1000000000000))
