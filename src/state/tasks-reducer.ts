@@ -24,7 +24,7 @@ export const tasksReducer = (state: TasksStateType, action: ActionsType): TasksS
 			return {
 				...state,
 				[action.todoListId]: state[action.todoListId]
-					.filter(t => t.id === action.taskId)
+					.filter(t => t.id !== action.taskId)
 			}
 		case 'ADD_TASK':
 			return {
