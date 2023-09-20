@@ -8,7 +8,9 @@ import { store } from './state/store'
 
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
+
 root.render(
+// @ts-ignore
 	<Provider store={store}>
 		<AppWithRedux />
 	</Provider>
