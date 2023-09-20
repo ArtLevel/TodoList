@@ -15,7 +15,8 @@ import { addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC } from '
 import { useDispatch, useSelector } from 'react-redux'
 import { AppRootState } from './state/store'
 
-export type FilterValuesType = 'all' | 'active' | 'completed';
+export type FilterValuesType = 'all' | 'active' | 'completed'
+
 export type TodolistType = {
 	id: string
 	title: string
