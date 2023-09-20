@@ -7,8 +7,8 @@ import { Button, Checkbox } from '@mui/material'
 import { addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC } from './state/tasks-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { FilterValuesType, TodolistType } from './AppWithRedux'
-import { AppRootStateType } from './state/store'
 import { changeTodolistFilterAC, changeTodolistTitleAC, removeTodolistAC } from './state/todolists-reducer'
+import { AppRootStateType } from './state/store'
 
 
 export type TaskType = {
@@ -23,7 +23,15 @@ type PropsType = {
 
 export function TodolistWithRedux(props: PropsType) {
 	const dispatch = useDispatch()
-	const tasks = useSelector<AppRootStateType, TaskType[]>(s => s.tasks[props.todolist.id])
+	let tasks = useSelector<AppRootStateType, TaskType[]>(s => s.tasks[props.todolist.id])
+
+	if (props.todolist.filter === 'active') {
+		tasks = tasks.filter(t => !t.isDone)
+	}
+
+	if (props.todolist.filter === 'completed') {
+		tasks = tasks.filter(t => t.isDone)
+	}
 
 	function removeTask(id: string, todolistId: string) {
 		dispatch(removeTaskAC(id, todolistId))
