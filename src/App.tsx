@@ -1,13 +1,13 @@
 import React from 'react'
 import './App.css'
-import { TaskType } from './Todolist'
+import { TaskType, Todolist } from './Todolist'
 import { AddItemForm } from './AddItemForm'
-import { AppBar, Button, Container, Grid, Paper, Toolbar, Typography } from '@mui/material'
-import IconButton from '@mui/material/IconButton/IconButton'
+import { AppBar, Button, Container, Grid, IconButton, Paper, Toolbar, Typography } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import { addTodolistAC } from './state/todolists-reducer'
+
 import { useDispatch, useSelector } from 'react-redux'
-import { TodolistWithRedux } from './TodolistWithRedux'
+import { tasksSelector } from './state/selector/tasksSelector'
 import { todolistsSelector } from './state/selector/todolistsSelector'
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
@@ -21,9 +21,12 @@ export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
-function AppWithRedux() {
-	const dispatch = useDispatch()
+
+function App() {
 	const todolists = useSelector(todolistsSelector)
+	const tasks = useSelector(tasksSelector)
+
+	const dispatch = useDispatch()
 
 	function addTodolist(title: string) {
 		dispatch(addTodolistAC(title))
@@ -49,10 +52,23 @@ function AppWithRedux() {
 				<Grid container spacing={3}>
 					{
 						todolists.map(tl => {
-							return <Grid key={tl.id} item>
+							let allTodolistTasks = tasks[tl.id]
+							let tasksForTodolist = allTodolistTasks
+
+							if (tl.filter === 'active') {
+								tasksForTodolist = allTodolistTasks.filter(t => t.isDone === false)
+							}
+							if (tl.filter === 'completed') {
+								tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true)
+							}
+
+							return <Grid item key={tl.id}>
 								<Paper style={{ padding: '10px' }}>
-									<TodolistWithRedux
-										todolist={tl}
+									<Todolist
+										id={tl.id}
+										title={tl.title}
+										tasks={tasksForTodolist}
+										filter={tl.filter}
 									/>
 								</Paper>
 							</Grid>
@@ -64,4 +80,4 @@ function AppWithRedux() {
 	)
 }
 
-export default AppWithRedux
+export default App

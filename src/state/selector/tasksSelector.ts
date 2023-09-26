@@ -1,4 +1,4 @@
 import { AppRootStateType } from '../store'
-import { TodolistType } from '../../App'
+import { TasksStateType } from '../../App'
 
-export const todolistsSelector = (state: AppRootStateType): TodolistType[] => state.todolists
+export const tasksSelector = (state: AppRootStateType): TasksStateType => state.tasks
