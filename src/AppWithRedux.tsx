@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { AddItemForm } from './AddItemForm'
-import { AppBar, Button, CircularProgress, Container, Grid, Paper, Toolbar, Typography } from '@mui/material'
+import { AppBar, Button, Container, Grid, Paper, Toolbar, Typography } from '@mui/material'
 import IconButton from '@mui/material/IconButton/IconButton'
 import { Menu } from '@mui/icons-material'
 import { addTodolistAC } from './state/todolists-reducer'
@@ -49,7 +49,6 @@ function AppWithRedux() {
 					<AddItemForm addItem={addTodolist} />
 				</Grid>
 				<Grid container spacing={3}>
-					<CircularProgress />
 					{
 						todolists.map(tl => {
 							return <Grid key={tl.id} item>
