@@ -6,9 +6,9 @@ import { AppBar, Button, Container, Grid, Paper, Toolbar, Typography } from '@mu
 import IconButton from '@mui/material/IconButton/IconButton'
 import { Menu } from '@mui/icons-material'
 import { addTodolistAC } from './state/todolists-reducer'
-import { AppRootStateType } from './state/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { TodolistWithRedux } from './TodolistWithRedux'
+import { todolistsSelector } from './state/selector/todolistsSelector'
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
 export type TodolistType = {
@@ -23,7 +23,7 @@ export type TasksStateType = {
 
 function AppWithRedux() {
 	const dispatch = useDispatch()
-	const todolists = useSelector<AppRootStateType, TodolistType[]>(state => state.todolists)
+	const todolists = useSelector(todolistsSelector)
 
 	function addTodolist(title: string) {
 		dispatch(addTodolistAC(title))
