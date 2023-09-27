@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo, useCallback, useMemo } from 'react'
 import { FilterValuesType } from './App'
 import { AddItemForm } from './AddItemForm'
 import { EditableSpan } from './EditableSpan'
@@ -44,13 +44,23 @@ export const Todolist = memo((props: PropsType) => {
 	const onActiveClickHandler = useCallback(() => props.changeFilter('active', props.id), [props.changeFilter, props.id])
 	const onCompletedClickHandler = useCallback(() => props.changeFilter('completed', props.id), [props.changeFilter, props.id])
 
-	let tasksForTodolist = props.tasks
+	let tasks = props.tasks
+
+	tasks = useMemo(() => {
+		if (props.filter === 'active') {
+			tasks = tasks.filter(t => t.isDone === false)
+		}
+		if (props.filter === 'completed') {
+			tasks = tasks.filter(t => t.isDone === true)
+		}
+		return tasks
+	}, [tasks, props.filter])
 
 	if (props.filter === 'active') {
-		tasksForTodolist = props.tasks.filter(t => t.isDone === false)
+		tasks = props.tasks.filter(t => t.isDone === false)
 	}
 	if (props.filter === 'completed') {
-		tasksForTodolist = props.tasks.filter(t => t.isDone === true)
+		tasks = props.tasks.filter(t => t.isDone === true)
 	}
 
 	return <div>
@@ -62,7 +72,7 @@ export const Todolist = memo((props: PropsType) => {
 		<AddItemForm addItem={addTask} />
 		<div>
 			{
-				tasksForTodolist.map(t => <Task key={t.id} task={t} todolistId={props.id} />)
+				tasks.map(t => <Task key={t.id} task={t} todolistId={props.id} />)
 			}
 		</div>
 		<div style={{ paddingTop: '10px' }}>
