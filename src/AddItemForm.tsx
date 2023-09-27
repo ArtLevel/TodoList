@@ -1,6 +1,6 @@
-import IconButton from '@mui/material/IconButton/IconButton';
 import TextField from '@mui/material/TextField/TextField';
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import {IconButton} from "@mui/material";
 import {AddBox} from "@mui/icons-material";
 
 type AddItemFormPropsType = {
@@ -8,7 +8,6 @@ type AddItemFormPropsType = {
 }
 
 export function AddItemForm(props: AddItemFormPropsType) {
-
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
 
