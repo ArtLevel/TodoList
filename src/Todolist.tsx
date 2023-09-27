@@ -4,7 +4,7 @@ import { AddItemForm } from './AddItemForm'
 import { EditableSpan } from './EditableSpan'
 import { Checkbox, IconButton } from '@mui/material'
 import { Delete } from '@mui/icons-material'
-import { OurButton } from './components/Button'
+import { OurButton } from './components/OurButton'
 
 
 export type TaskType = {
@@ -88,12 +88,18 @@ export const Todolist = memo((props: PropsType) => {
 			}
 		</div>
 		<div style={{ paddingTop: '10px' }}>
-			<OurButton filter={'all'} activeFilter={props.filter}
-			           callback={onAllClickHandler}>All</OurButton>
-			<OurButton filter={'active'} activeFilter={props.filter}
-			           callback={onActiveClickHandler}>Active</OurButton>
-			<OurButton filter={'completed'} activeFilter={props.filter}
-			           callback={onCompletedClickHandler}>Completed</OurButton>
+			<OurButton
+				onClick={onAllClickHandler}
+				filter={'all'} activeFilter={props.filter}
+			>All</OurButton>
+			<OurButton
+				onClick={onActiveClickHandler}
+				filter={'active'} activeFilter={props.filter}
+			>Active</OurButton>
+			<OurButton
+				onClick={onCompletedClickHandler}
+				filter={'completed'} activeFilter={props.filter}
+			>Completed</OurButton>
 		</div>
 	</div>
 })
