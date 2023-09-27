@@ -1,17 +1,16 @@
-import React, { ButtonHTMLAttributes, memo, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, memo } from 'react'
 import { Button } from '@mui/material'
 import { FilterValuesType } from '../AppWithRedux'
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+	variant: 'outlined' | 'text'
 	filter: FilterValuesType
-	activeFilter: FilterValuesType
-	children: ReactNode
 }
 
-export const OurButton = memo(({ filter, children, activeFilter, ...restProps }: IButton) => {
-	const { onClick } = restProps
+export const OurButton = memo(({ filter, variant, ...restProps }: IButton) => {
+	const { onClick, children } = restProps
 
-	return <Button variant={filter === activeFilter ? 'outlined' : 'text'}
+	return <Button variant={variant}
 	               color={filter === 'all' ? 'inherit' : filter === 'completed' ? 'success' : filter === 'active' ? 'secondary' : 'inherit'}
 	               onClick={onClick}
 	>{children}</Button>

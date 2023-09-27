@@ -90,15 +90,18 @@ export const Todolist = memo((props: PropsType) => {
 		<div style={{ paddingTop: '10px' }}>
 			<OurButton
 				onClick={onAllClickHandler}
-				filter={'all'} activeFilter={props.filter}
+				variant={props.filter === 'all' ? 'outlined' : 'text'}
+				filter={'all'}
 			>All</OurButton>
 			<OurButton
 				onClick={onActiveClickHandler}
-				filter={'active'} activeFilter={props.filter}
+				variant={props.filter === 'active' ? 'outlined' : 'text'}
+				filter={'active'}
 			>Active</OurButton>
 			<OurButton
 				onClick={onCompletedClickHandler}
-				filter={'completed'} activeFilter={props.filter}
+				variant={props.filter === 'completed' ? 'outlined' : 'text'}
+				filter={'completed'}
 			>Completed</OurButton>
 		</div>
 	</div>
