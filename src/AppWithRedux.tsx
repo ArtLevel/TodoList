@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { useCallback } from 'react'
 import './App.css'
 import { TaskType, Todolist } from './Todolist'
 import { AddItemForm } from './AddItemForm'
@@ -25,10 +25,11 @@ export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
-const Fake = memo((props: { count: number }) => {
-	console.log('Fake')
-	return <h1>{props.count}</h1>
-})
+// const Fake = memo(() => {
+// 	const arr = useSelector<AppRootStateType, TaskType[]>(s => s.tasks.count)
+//
+// 	return <h1>{arr.length}</h1>
+// })
 
 function AppWithRedux() {
 	const todolists = useSelector<AppRootStateType, Array<TodolistType>>(state => state.todolists)
@@ -88,7 +89,6 @@ function AppWithRedux() {
 					<Button color='inherit'>Login</Button>
 				</Toolbar>
 			</AppBar>
-			<Fake count={10} />
 			<Container fixed>
 				<Grid container style={{ padding: '20px' }}>
 					<AddItemForm addItem={addTodolist} />
@@ -97,21 +97,13 @@ function AppWithRedux() {
 					{
 						todolists.map(tl => {
 							let allTodolistTasks = tasks[tl.id]
-							let tasksForTodolist = allTodolistTasks
-
-							if (tl.filter === 'active') {
-								tasksForTodolist = allTodolistTasks.filter(t => t.isDone === false)
-							}
-							if (tl.filter === 'completed') {
-								tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true)
-							}
 
 							return <Grid item key={tl.id}>
 								<Paper style={{ padding: '10px' }}>
 									<Todolist
 										id={tl.id}
 										title={tl.title}
-										tasks={tasksForTodolist}
+										tasks={allTodolistTasks}
 										removeTask={removeTask}
 										changeFilter={changeFilter}
 										addTask={addTask}
