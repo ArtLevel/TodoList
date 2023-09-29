@@ -1,5 +1,4 @@
 import { TasksStateType } from '../App'
-import { TaskType } from '../Todolist'
 import { v1 } from 'uuid'
 import { AddTodolistActionType, RemoveTodolistActionType } from './todolists-reducer'
 
@@ -41,25 +40,17 @@ const initialState: TasksStateType = {
 
 export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
 	switch (action.type) {
-		case 'REMOVE-TASK': {
-			const stateCopy = { ...state }
-			const tasks = stateCopy[action.todolistId]
-			const newTasks = tasks.filter(t => t.id != action.taskId)
-			stateCopy[action.todolistId] = newTasks
-			return stateCopy
-		}
-		case 'ADD-TASK': {
-			const stateCopy = { ...state }
-			const newTask: TaskType = {
-				id: v1(),
-				title: action.title,
-				isDone: false
+		case 'REMOVE-TASK':
+			return {
+				...state,
+				[action.todolistId]: state[action.todolistId].filter(t => t.id !== action.taskId)
 			}
-			const tasks = stateCopy[action.todolistId]
-			const newTasks = [newTask, ...tasks]
-			stateCopy[action.todolistId] = newTasks
-			return stateCopy
-		}
+		case 'ADD-TASK':
+			return {
+				...state,
+				[action.todolistId]: [{ id: v1(), title: action.title, isDone: false }, ...state[action.todolistId]]
+			}
+
 		case 'CHANGE-TASK-STATUS':
 			return {
 				...state,
@@ -68,7 +59,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 					isDone: action.isDone
 				} : t)
 			}
-		case 'CHANGE-TASK-TITLE': {
+		case 'CHANGE-TASK-TITLE':
 			return {
 				...state,
 				[action.todolistId]: state[action.todolistId].map(t => t.id === action.taskId ? {
@@ -76,18 +67,18 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 					title: action.title
 				} : t)
 			}
-		}
-		case 'ADD-TODOLIST': {
+
+		case 'ADD-TODOLIST':
 			return {
 				...state,
 				[action.todolistId]: []
 			}
-		}
-		case 'REMOVE-TODOLIST': {
+
+		case 'REMOVE-TODOLIST':
 			const copyState = { ...state }
 			delete copyState[action.id]
 			return copyState
-		}
+
 		default:
 			return state
 	}
