@@ -1,7 +1,7 @@
 import { Checkbox, IconButton } from '@mui/material'
 import { EditableSpan } from './EditableSpan'
 import { Delete } from '@mui/icons-material'
-import React, { ChangeEvent, FC, memo } from 'react'
+import React, { ChangeEvent, FC, memo, useCallback } from 'react'
 import { TaskType } from './Todolist'
 import { useDispatch } from 'react-redux'
 import { changeTaskStatusAC, changeTaskTitleAC, removeTaskAC } from './state/tasks-reducer'
@@ -15,13 +15,13 @@ export const Task: FC<ITask> = memo(({ task, todolistId }) => {
 	const dispatch = useDispatch()
 
 	const onClickHandler = () => dispatch(removeTaskAC(task.id, todolistId))
-	const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+	const onChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
 		let newIsDoneValue = e.currentTarget.checked
 		dispatch(changeTaskStatusAC(task.id, newIsDoneValue, todolistId))
-	}
-	const onTitleChangeHandler = (newValue: string) => {
+	}, [dispatch, task.id, todolistId])
+	const onTitleChangeHandler = useCallback((newValue: string) => {
 		dispatch(changeTaskTitleAC(task.id, newValue, todolistId))
-	}
+	}, [dispatch, task.id, todolistId])
 
 	return <div key={task.id} className={task.isDone ? 'is-done' : ''}>
 		<Checkbox
