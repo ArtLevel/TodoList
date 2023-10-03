@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 
 const FIRST_BUTTON_BACKGROUND = { background: 'tomato' }
 const CONTAINER_STYLES = { display: 'flex', flexDirection: 'column', gap: 10 }
@@ -11,7 +11,7 @@ const BUTTON_STYLES = { border: 'none', outline: 'none', color: 'white', borderR
 export const Task_2 = () => {
 	const [firstCount, setFirstCount] = useState(0)
 
-	const handlePlusCountValueClick = () => setFirstCount(prevFirstCount => prevFirstCount + 1)
+	const handlePlusCountValueClick = useCallback(() => setFirstCount(prevFirstCount => prevFirstCount + 1), [])
 
 	return (
 		<div style={{ ...CONTAINER_STYLES } as any}>
@@ -22,7 +22,8 @@ export const Task_2 = () => {
 	)
 }
 
-export const Button: FC<{ onPlusCountValueClick: () => void }> = ({ onPlusCountValueClick }) => {
+export const Button: FC<{ onPlusCountValueClick: () => void }> = memo(({ onPlusCountValueClick }) => {
+	console.log('Button')
 	return (
 		<div>
 			<button
@@ -33,13 +34,14 @@ export const Button: FC<{ onPlusCountValueClick: () => void }> = ({ onPlusCountV
 			</button>
 		</div>
 	)
-}
+})
 
 export const Checkbox = memo(() => {
-	console.log('Check Box')
-	const [isChecked, setIsChecked] = useState(false)
-	const handleSetIsChecked = () => setIsChecked(!isChecked)
-	return (
-		<input type='checkbox' checked={isChecked} onChange={handleSetIsChecked} />
-	)
-})
+		console.log('Check Box')
+		const [isChecked, setIsChecked] = useState(false)
+		const handleSetIsChecked = () => setIsChecked(!isChecked)
+		return (
+			<input type='checkbox' checked={isChecked} onChange={handleSetIsChecked} />
+		)
+	}
+)
