@@ -80,34 +80,69 @@
 
 // -------------------------------------------------
 
-setTimeout(() => {
-  console.log("s1");
-}, 0);
+// setTimeout(() => {
+//   console.log("s1");
+// }, 0);
+//
+// setTimeout(() => {
+//   console.log("s2");
+// }, 1000);
+//
+// new Promise((res, rej) => {
+//   console.log("p1");
+//   res();
+//   console.log("p2");
+// }).then(() => {
+//   console.log("p3");
+// });
+//
+// console.log("w1");
+//
+// async function test1() {
+//   console.log("a1");
+//   await test2();
+//   console.log("a2");
+// }
+//
+// async function test2() {
+//   console.log("a3");
+// }
+//
+// test1();
+//
+// console.log("w2");
+
+console.log(1);
 
 setTimeout(() => {
-  console.log("s2");
-}, 1000);
-
-new Promise((res, rej) => {
-  console.log("p1");
-  res();
-  console.log("p2");
-}).then(() => {
-  console.log("p3");
+  console.log(2);
+  Promise.resolve().then(() => {
+    console.log(3);
+  });
 });
 
-console.log("w1");
+new Promise((res, rej) => {
+  console.log(4);
+  res(5);
+}).then((data) => {
+  console.log(data);
+  Promise.resolve()
+    .then(() => {
+      console.log(6);
+    })
+    .then(() => {
+      console.log(7);
 
-async function test1() {
-  console.log("a1");
-  await test2();
-  console.log("a2");
-}
+      setTimeout(() => {
+        console.log(8);
+      }, 0);
+    });
+});
 
-async function test2() {
-  console.log("a3");
-}
+setTimeout(() => {
+  console.log(9);
+});
 
-test1();
+console.log(10);
 
-console.log("w2");
+// 1 4 10
