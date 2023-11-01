@@ -1,8 +1,8 @@
-describe('addItemForm', () => {
+describe('EditableSpan', () => {
 	it('base example, visually looks correct', async () => {
 		// APIs from jest-puppeteer
 		await page.goto(
-			'http://localhost:9009/iframe.html?id=additemform--add-item-form-base-example&viewMode=story',
+			'http://localhost:9009/iframe.html?id=editablespan--editable-span-base-example',
 			{ waitUntil: 'networkidle2' }
 		)
 
