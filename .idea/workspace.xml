@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2209ad3f-4861-4894-b3ff-4d618dab84a8" name="Changes" comment="Complete">
+      <change afterPath="$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/.storybook/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/.storybook/preview.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/AddItemForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/EditableSpan.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/tasks-reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/todolists-reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo13v3/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectId" id="2T1aXad5YcfaqqAq0kioBvz5Bhj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/github/React-in-detail/src/stories&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;E:/github/TodoList/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\github\\TodoList\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\github\\TodoList\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\github\React-in-detail\src\stories" />
+      <recent name="E:\github\TodoList\integration" />
+      <recent name="E:\github\TodoList\src\stories" />
+      <recent name="E:\github\TodoList" />
+      <recent name="E:\github\TodoList\src\task_3" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\github\TodoList\src\task_2" />
+      <recent name="E:\IT Incubator\todo-list-trello\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.01.js">
+    <configuration name="property with todolistId should be deleted" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/state/tasks-reducer.test.tsx" />
+      <test-names>
+        <test-name value="property with todolistId should be deleted" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="01.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/01.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/1.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="js.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/state/js.js" working-dir="$PROJECT_DIR$/src/state">
+      <method v="2" />
+    </configuration>
+    <configuration name="jest:integration" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="jest:integration" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.01.js" />
+        <item itemvalue="Node.js.1.js" />
+        <item itemvalue="npm.jest:integration" />
+        <item itemvalue="Node.js.js.js" />
+        <item itemvalue="Jest.property with todolistId should be deleted" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2209ad3f-4861-4894-b3ff-4d618dab84a8" name="Changes" comment="" />
+      <created>1690213081530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690213081530</updated>
+      <workItem from="1690213082663" duration="106000" />
+      <workItem from="1690213403806" duration="1000" />
+      <workItem from="1690391281584" duration="13000" />
+      <workItem from="1690734094778" duration="7502000" />
+      <workItem from="1690741707143" duration="3314000" />
+      <workItem from="1690792092923" duration="2668000" />
+      <workItem from="1690794798400" duration="616000" />
+      <workItem from="1690817326180" duration="176000" />
+      <workItem from="1690878561230" duration="4660000" />
+      <workItem from="1690883401660" duration="3075000" />
+      <workItem from="1690899545240" duration="1407000" />
+      <workItem from="1690968398972" duration="6000" />
+      <workItem from="1691418812598" duration="1254000" />
+      <workItem from="1691420379462" duration="106000" />
+      <workItem from="1691420580658" duration="11706000" />
+      <workItem from="1691490845240" duration="6000" />
+      <workItem from="1692805308800" duration="1873000" />
+      <workItem from="1692807193670" duration="1984000" />
+      <workItem from="1692861361606" duration="218000" />
+      <workItem from="1692975567383" duration="633000" />
+      <workItem from="1692976218167" duration="4420000" />
+      <workItem from="1693042970714" duration="339000" />
+      <workItem from="1693128745126" duration="8359000" />
+      <workItem from="1693155665877" duration="42000" />
+      <workItem from="1693321605086" duration="97000" />
+      <workItem from="1693322002621" duration="1035000" />
+      <workItem from="1693324360717" duration="1095000" />
+      <workItem from="1693325481968" duration="9041000" />
+      <workItem from="1693379278798" duration="6386000" />
+      <workItem from="1693389729802" duration="6826000" />
+      <workItem from="1693408327903" duration="305000" />
+      <workItem from="1693811885670" duration="7140000" />
+      <workItem from="1693903588220" duration="339000" />
+      <workItem from="1693904196303" duration="904000" />
+      <workItem from="1693907865012" duration="224000" />
+      <workItem from="1693908306293" duration="7627000" />
+      <workItem from="1693928627872" duration="5032000" />
+      <workItem from="1693935245058" duration="2500000" />
+      <workItem from="1694102676190" duration="10930000" />
+      <workItem from="1694160087912" duration="906000" />
+      <workItem from="1694174700214" duration="3616000" />
+      <workItem from="1694258382927" duration="165000" />
+      <workItem from="1694617260851" duration="11950000" />
+      <workItem from="1694679717250" duration="36000" />
+      <workItem from="1695117932912" duration="624000" />
+      <workItem from="1695128141145" duration="5008000" />
+      <workItem from="1695194562428" duration="1730000" />
+      <workItem from="1695196405003" duration="3617000" />
+      <workItem from="1695222145071" duration="13091000" />
+      <workItem from="1695284747603" duration="876000" />
+      <workItem from="1695747368710" duration="989000" />
+      <workItem from="1695748411210" duration="2629000" />
+      <workItem from="1695751082005" duration="158000" />
+      <workItem from="1695751284801" duration="1853000" />
+      <workItem from="1695827795973" duration="10542000" />
+      <workItem from="1695886656038" duration="659000" />
+      <workItem from="1695889635664" duration="1302000" />
+      <workItem from="1695891443913" duration="24000" />
+      <workItem from="1695891468881" duration="172000" />
+      <workItem from="1695891675217" duration="3257000" />
+      <workItem from="1695895612229" duration="4829000" />
+      <workItem from="1695917525294" duration="8338000" />
+      <workItem from="1695976889747" duration="4434000" />
+      <workItem from="1695985914960" duration="1250000" />
+      <workItem from="1696077094908" duration="3000" />
+      <workItem from="1696349030098" duration="7645000" />
+      <workItem from="1696412353290" duration="7000" />
+      <workItem from="1696431816056" duration="1583000" />
+      <workItem from="1696433412904" duration="291000" />
+      <workItem from="1696433717665" duration="8271000" />
+      <workItem from="1696522770315" duration="6565000" />
+      <workItem from="1696607287192" duration="34000" />
+      <workItem from="1696608018012" duration="321000" />
+      <workItem from="1696666864428" duration="9110000" />
+      <workItem from="1696773925601" duration="616000" />
+      <workItem from="1696863985239" duration="8216000" />
+      <workItem from="1696928945697" duration="106000" />
+      <workItem from="1696929448063" duration="595000" />
+      <workItem from="1698849733184" duration="2300000" />
+      <workItem from="1698853175470" duration="23000" />
+      <workItem from="1698853246929" duration="86000" />
+      <workItem from="1698853429074" duration="1035000" />
+      <workItem from="1698854576507" duration="8916000" />
+      <workItem from="1698929176872" duration="1197000" />
+      <workItem from="1699000028826" duration="1683000" />
+      <workItem from="1699088072829" duration="2926000" />
+      <workItem from="1699091777419" duration="998000" />
+      <workItem from="1699101552707" duration="4971000" />
+      <workItem from="1699121484676" duration="378000" />
+      <workItem from="1699175641741" duration="1860000" />
+    </task>
+    <task id="LOCAL-00001" summary="Complete">
+      <option name="closed" value="true" />
+      <created>1695237111721</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695237111722</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete" />
+  </component>
+</project>
