@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {ResponseT, TodoListT} from '../types/APITypes';
 
 const instance = axios.create({
 	withCredentials: true,
@@ -10,15 +11,17 @@ const instance = axios.create({
 
 export const todoListsAPI = {
 	getTodoLists() {
-		return instance.get('todo-lists')
+		return instance.get<TodoListT[]>('todo-lists')
 	},
 	postCreateTodoList() {
-		return instance.post('todo-lists', {title: 'What is it ?'})
+		return instance.post<ResponseT<{ item: TodoListT }>>('todo-lists', {title: 'What is it ?'})
 	},
 	deleteTodoList(todoListId: string) {
-		return instance.delete(`todo-lists/${todoListId}`)
+		return instance.delete<ResponseT<{
+			item: TodoListT
+		}>>(`todo-lists/${todoListId}`)
 	},
 	updateTodoList(todoListId: string) {
-		return instance.put(`todo-lists/${todoListId}`, {title: 'HI !'})
+		return instance.put<ResponseT<{}>>(`todo-lists/${todoListId}`, {title: 'HI !'})
 	}
 }
