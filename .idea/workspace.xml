@@ -5,39 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2209ad3f-4861-4894-b3ff-4d618dab84a8" name="Changes" comment="Complete">
-      <change afterPath="$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/.storybook/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/.storybook/preview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/AddItemForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/EditableSpan.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/Task.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/Todolist.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/tasks-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/src/state/todolists-reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo13v3/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +215,8 @@
       <workItem from="1699091777419" duration="998000" />
       <workItem from="1699101552707" duration="4971000" />
       <workItem from="1699121484676" duration="378000" />
-      <workItem from="1699175641741" duration="1860000" />
+      <workItem from="1699175641741" duration="2923000" />
+      <workItem from="1699179818532" duration="2113000" />
     </task>
     <task id="LOCAL-00001" summary="Complete">
       <option name="closed" value="true" />
@@ -276,5 +246,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Complete" />
     <option name="LAST_COMMIT_MESSAGE" value="Complete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/stories/todoListsApi.stories.tsx</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
