@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GetTasksResponse, ResponseT, TodoListT} from '../types/APITypes';
+import {GetTasksResponse, ResponseT, TodoListT, UpdateModelTaskT} from '../types/APITypes';
 
 const settings = {
 	withCredentials: true,
@@ -32,23 +32,15 @@ export const todoListsAPI = {
 	getTasks(todoListId: string) {
 		return instance.get<GetTasksResponse>(`todo-lists/${todoListId}/tasks`)
 	},
-	createTask(todoListId: string) {
+	createTask(todoListId: string, taskTitle: string) {
 		return instance.post <ResponseT<{
 			item: TodoListT
-		}>>(`todo-lists/${todoListId}/tasks`, {title: 'Hello !'})
+		}>>(`todo-lists/${todoListId}/tasks`, {title: taskTitle})
 	},
 	deleteTask(todoListId: string, taskId: string) {
 		return instance.delete<ResponseT>(`todo-lists/${todoListId}/tasks/${taskId}`)
 	},
-	updateTask(todoListId: string, taskId: string) {
-		return instance.put<ResponseT>(`todo-lists/${todoListId}/tasks/${taskId}`, {
-			title: 'Terpenie !',
-			description: '',
-			isDone: true,
-			status: 2,
-			priority: 2,
-			startDate: '',
-			deadline: ''
-		})
+	updateTask(todoListId: string, taskId: string, newTask: UpdateModelTaskT) {
+		return instance.put<ResponseT>(`todo-lists/${todoListId}/tasks/${taskId}`, newTask)
 	}
 }

@@ -35,6 +35,16 @@ export type UpdateTaskT = {
 	deadline: string
 }
 
+export type UpdateModelTaskT = {
+	title: string
+	description: string
+	status: number
+	priority: number
+	startDate: string
+	deadline: string
+}
+
+
 export type GetTasksResponse = {
 	error: string | null
 	totalCount: number
