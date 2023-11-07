@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react'
-import './App.css'
 import {Todolist} from './Todolist'
 import {AddItemForm} from './AddItemForm'
 import AppBar from '@mui/material/AppBar'
@@ -22,7 +21,7 @@ import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './
 import {useDispatch, useSelector} from 'react-redux'
 import {AppRootStateType} from './state/store'
 import {TaskStatuses, TaskType} from './types/APITypes';
-
+import './App.css'
 
 export type FilterValuesType = 'all' | 'active' | 'completed';
 
