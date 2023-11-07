@@ -11,28 +11,32 @@ export type ResponseT<Data = {}> = {
 	data: Data
 }
 
+export enum TaskStatuses {
+	New = 0,
+	InProgress = 1,
+	Completed = 2,
+	Draft = 3
+}
+
+export enum TodoTaskPriorities {
+	Low = 0,
+	Middle = 1,
+	Hi = 2,
+	Urgently = 3,
+	Later = 4
+}
+
 export type TaskType = {
 	description: string
 	title: string
-	completed: boolean
-	status: number
-	priority: number
+	status: TaskStatuses
+	priority: TodoTaskPriorities
 	startDate: string
 	deadline: string
 	id: string
 	todoListId: string
 	order: number
 	addedDate: string
-}
-
-export type UpdateTaskT = {
-	title: string
-	description: string
-	completed: boolean
-	status: number
-	priority: number
-	startDate: string
-	deadline: string
 }
 
 export type UpdateModelTaskT = {
@@ -43,7 +47,6 @@ export type UpdateModelTaskT = {
 	startDate: string
 	deadline: string
 }
-
 
 export type GetTasksResponse = {
 	error: string | null
