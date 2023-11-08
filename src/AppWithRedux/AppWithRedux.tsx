@@ -13,8 +13,7 @@ import {
 	Typography
 } from '@mui/material'
 import { Menu } from '@mui/icons-material'
-import { useTodoLists } from './hooks/useTodoLists'
-import { useTasks } from './hooks/useTasks'
+import { useAppWithRedux } from './hooks/useAppWithRedux'
 
 export type FilterValuesType = 'all' | 'active' | 'completed'
 export type TodolistType = {
@@ -27,24 +26,27 @@ export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
-function App() {
-	const {
-		tasks,
-		removeTask,
-		addTask,
-		changeTaskTitle,
-		changeStatus,
-		completelyRemoveTasksForTodoList,
-		addStateForNewTodoList
-	} = useTasks()
+/*
+const Fake = React.memo(function() {
+    console.log("FAKE")
+    const arr = useSelector<AppRootStateType, Array<TaskType>>(state => state.tasks.count)
+    return <h1>{arr.length}</h1>
+})
+*/
 
+function AppWithRedux() {
 	const {
 		todolists,
-		changeFilter,
+		tasks,
 		removeTodolist,
+		removeTask,
 		changeTodolistTitle,
-		addTodolist
-	} = useTodoLists(completelyRemoveTasksForTodoList, addStateForNewTodoList)
+		changeTaskTitle,
+		addTodolist,
+		changeFilter,
+		addTask,
+		changeStatus
+	} = useAppWithRedux()
 
 	return (
 		<div className='App'>
@@ -63,28 +65,13 @@ function App() {
 				</Grid>
 				<Grid container spacing={3}>
 					{todolists.map((tl) => {
-						let allTodolistTasks = tasks[tl.id]
-						let tasksForTodolist = allTodolistTasks
-
-						if (tl.filter === 'active') {
-							tasksForTodolist = allTodolistTasks.filter(
-								(t) => t.isDone === false
-							)
-						}
-						if (tl.filter === 'completed') {
-							tasksForTodolist = allTodolistTasks.filter(
-								(t) => t.isDone === true
-							)
-						}
-
 						return (
-							<Grid key={tl.id} item>
+							<Grid item key={tl.id}>
 								<Paper style={{ padding: '10px' }}>
 									<Todolist
-										key={tl.id}
 										id={tl.id}
 										title={tl.title}
-										tasks={tasksForTodolist}
+										tasks={tasks[tl.id]}
 										removeTask={removeTask}
 										changeFilter={changeFilter}
 										addTask={addTask}
@@ -104,4 +91,4 @@ function App() {
 	)
 }
 
-export default App
+export default AppWithRedux
