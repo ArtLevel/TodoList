@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 import { TaskType, Todolist } from '../Todolist'
-import { AddItemForm } from '../AddItemForm'
+import { AddItemForm } from '../AddItemForm/AddItemForm'
 import {
 	AppBar,
 	Button,
