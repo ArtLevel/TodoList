@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react'
-import './App.css'
 import { TaskType, Todolist } from './Todolist'
 import { AddItemForm } from './AddItemForm'
 import AppBar from '@mui/material/AppBar'
@@ -25,8 +24,10 @@ import {
 } from './state/tasks-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppRootStateType } from './state/store'
+import './App.css'
 
 export type FilterValuesType = 'all' | 'active' | 'completed'
+
 export type TodolistType = {
 	id: string
 	title: string
