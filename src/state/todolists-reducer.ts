@@ -109,8 +109,3 @@ export const fetchTodolistsTC = () => {
 			dispatch(setTodolistsAC(res.data))
 		})
 }
-
-export const f1 = () => {
-	return () => {
-	}
-}
