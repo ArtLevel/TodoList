@@ -12,15 +12,15 @@ import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import { Menu } from '@mui/icons-material'
 import {
-	addTodolistAC,
+	addTodolistTC,
 	changeTodolistFilterAC,
-	changeTodolistTitleAC,
+	changeTodolistTitleTC,
+	deleteTodolistTC,
 	fetchTodolistsTC,
 	FilterValuesType,
-	removeTodolistAC,
 	TodolistDomainType
 } from './state/todolists-reducer'
-import { addTaskTC, changeTaskStatusAC, changeTaskTitleAC, deleteTaskTC } from './state/tasks-reducer'
+import { addTaskTC, deleteTaskTC, updateTaskTC } from './state/tasks-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppRootStateType } from './state/store'
 import { TaskStatuses, TaskType } from './api/todolists-api'
@@ -51,13 +51,13 @@ function App() {
 	}, [])
 
 	const changeStatus = useCallback(function(id: string, status: TaskStatuses, todolistId: string) {
-		const action = changeTaskStatusAC(id, status, todolistId)
-		dispatch(action)
+		// @ts-ignore
+		dispatch(updateTaskTC(id, { status }, todolistId))
 	}, [])
 
 	const changeTaskTitle = useCallback(function(id: string, newTitle: string, todolistId: string) {
-		const action = changeTaskTitleAC(id, newTitle, todolistId)
-		dispatch(action)
+		// @ts-ignore
+		dispatch(updateTaskTC(id, { title: newTitle }, todolistId))
 	}, [])
 
 	const changeFilter = useCallback(function(value: FilterValuesType, todolistId: string) {
@@ -66,18 +66,18 @@ function App() {
 	}, [])
 
 	const removeTodolist = useCallback(function(id: string) {
-		const action = removeTodolistAC(id)
-		dispatch(action)
+		// @ts-ignore
+		dispatch(deleteTodolistTC(id))
 	}, [])
 
 	const changeTodolistTitle = useCallback(function(id: string, title: string) {
-		const action = changeTodolistTitleAC(id, title)
-		dispatch(action)
+		// @ts-ignore
+		dispatch(changeTodolistTitleTC(id, title))
 	}, [])
 
 	const addTodolist = useCallback((title: string) => {
-		const action = addTodolistAC(title)
-		dispatch(action)
+		// @ts-ignore
+		dispatch(addTodolistTC(title))
 	}, [dispatch])
 
 	return (

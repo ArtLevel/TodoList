@@ -92,6 +92,7 @@ export type UpdateTaskModelType = {
 	startDate: string
 	deadline: string
 }
+
 type GetTasksResponse = {
 	error: string | null
 	totalCount: number
