@@ -1,6 +1,6 @@
 const initState: InitialStateT = {
 	status: 'idle',
-	error: 'some error'
+	error: null
 }
 
 export const appReducer = (state: InitialStateT = initState, action: ActionsType): InitialStateT => {
@@ -31,4 +31,6 @@ export type InitialStateT = {
 }
 
 
-type ActionsType = ReturnType<typeof setErrorAC> | ReturnType<typeof setStatusAC>
+export type SetErrorAT = ReturnType<typeof setErrorAC>
+
+type ActionsType = SetErrorAT | ReturnType<typeof setStatusAC>
