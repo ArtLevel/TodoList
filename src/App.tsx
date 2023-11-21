@@ -26,6 +26,7 @@ import { AppRootStateType } from './state/store'
 import { TaskStatuses, TaskType } from './api/todolists-api'
 import { LinearProgress } from '@mui/material'
 import { CustomizedSnackbars } from './ErrorSnackbar/ErrorSnackbar'
+import { RequestStatusT } from './state/app-reducer'
 
 
 export type TasksStateType = {
@@ -35,6 +36,7 @@ export type TasksStateType = {
 function App() {
 	const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
 	const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
+	const status = useSelector<AppRootStateType, RequestStatusT>(state => state.app.status)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
@@ -96,7 +98,7 @@ function App() {
 					<Button color='inherit'>Login</Button>
 				</Toolbar>
 			</AppBar>
-			<LinearProgress />
+			{status === 'loading' && <LinearProgress />}
 			<Container fixed>
 				<Grid container style={{ padding: '20px' }}>
 					<AddItemForm addItem={addTodolist} />

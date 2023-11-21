@@ -32,5 +32,6 @@ export type InitialStateT = {
 
 
 export type SetErrorAT = ReturnType<typeof setErrorAC>
+export type SetStatusAT = ReturnType<typeof setStatusAC>
 
-type ActionsType = SetErrorAT | ReturnType<typeof setStatusAC>
+type ActionsType = SetErrorAT | SetStatusAT
