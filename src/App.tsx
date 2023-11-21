@@ -24,6 +24,8 @@ import { addTaskTC, deleteTaskTC, updateTaskTC } from './state/tasks-reducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppRootStateType } from './state/store'
 import { TaskStatuses, TaskType } from './api/todolists-api'
+import { LinearProgress } from '@mui/material'
+import { CustomizedSnackbars } from './ErrorSnackbar/ErrorSnackbar'
 
 
 export type TasksStateType = {
@@ -83,6 +85,7 @@ function App() {
 	return (
 		<div className='App'>
 			<AppBar position='static'>
+				<CustomizedSnackbars />
 				<Toolbar>
 					<IconButton edge='start' color='inherit' aria-label='menu'>
 						<Menu />
@@ -93,6 +96,7 @@ function App() {
 					<Button color='inherit'>Login</Button>
 				</Toolbar>
 			</AppBar>
+			<LinearProgress />
 			<Container fixed>
 				<Grid container style={{ padding: '20px' }}>
 					<AddItemForm addItem={addTodolist} />

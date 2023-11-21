@@ -191,4 +191,3 @@ export const updateTaskTC = (taskId: string, model: UpdateDomainTaskModelType, t
 		})
 	}
 }
-
