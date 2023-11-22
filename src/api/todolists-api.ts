@@ -56,7 +56,6 @@ export type ResponseType<D = {}> = {
 	data: D
 }
 
-
 export enum TaskStatuses {
 	New = 0,
 	InProgress = 1,
