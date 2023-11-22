@@ -33,6 +33,8 @@ export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
+// I need to check mistakes in my github
+
 function App() {
 	const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
 	const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
