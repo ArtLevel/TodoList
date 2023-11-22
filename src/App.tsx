@@ -17,52 +17,42 @@ import {
 	changeTodolistTitleTC,
 	deleteTodolistTC,
 	fetchTodolistsTC,
-	FilterValuesType,
-	TodolistDomainType
+	FilterValuesType
 } from './state/todolists-reducer'
 import { addTaskTC, deleteTaskTC, updateTaskTC } from './state/tasks-reducer'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppRootStateType } from './state/store'
+import { useAppDispatch, useAppSelector } from './state/store'
 import { TaskStatuses, TaskType } from './api/todolists-api'
 import { LinearProgress } from '@mui/material'
 import { CustomizedSnackbars } from './ErrorSnackbar/ErrorSnackbar'
-import { RequestStatusT } from './state/app-reducer'
 
 
 export type TasksStateType = {
 	[key: string]: Array<TaskType>
 }
 
-// I need to check mistakes in my github
-
 function App() {
-	const todolists = useSelector<AppRootStateType, Array<TodolistDomainType>>(state => state.todolists)
-	const tasks = useSelector<AppRootStateType, TasksStateType>(state => state.tasks)
-	const status = useSelector<AppRootStateType, RequestStatusT>(state => state.app.status)
-	const dispatch = useDispatch()
+	const todolists = useAppSelector(state => state.todolists)
+	const tasks = useAppSelector(state => state.tasks)
+	const status = useAppSelector(state => state.app.status)
+	const dispatch = useAppDispatch()
 
 	useEffect(() => {
-		// @ts-ignore
 		dispatch(fetchTodolistsTC())
 	}, [])
 
 	const removeTask = useCallback(function(id: string, todolistId: string) {
-		// @ts-ignore
 		dispatch(deleteTaskTC(todolistId, id))
 	}, [])
 
 	const addTask = useCallback(function(title: string, todolistId: string) {
-		// @ts-ignore
 		dispatch(addTaskTC(todolistId, title))
 	}, [])
 
 	const changeStatus = useCallback(function(id: string, status: TaskStatuses, todolistId: string) {
-		// @ts-ignore
 		dispatch(updateTaskTC(id, { status }, todolistId))
 	}, [])
 
 	const changeTaskTitle = useCallback(function(id: string, newTitle: string, todolistId: string) {
-		// @ts-ignore
 		dispatch(updateTaskTC(id, { title: newTitle }, todolistId))
 	}, [])
 
@@ -72,17 +62,14 @@ function App() {
 	}, [])
 
 	const removeTodolist = useCallback(function(id: string) {
-		// @ts-ignore
 		dispatch(deleteTodolistTC(id))
 	}, [])
 
 	const changeTodolistTitle = useCallback(function(id: string, title: string) {
-		// @ts-ignore
 		dispatch(changeTodolistTitleTC(id, title))
 	}, [])
 
 	const addTodolist = useCallback((title: string) => {
-		// @ts-ignore
 		dispatch(addTodolistTC(title))
 	}, [dispatch])
 
