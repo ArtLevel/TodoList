@@ -1,6 +1,6 @@
-import { todolistsAPI, TodolistType } from '../api/todolists-api'
+import { todolistsAPI, TodolistType } from '../../api/todolists-api'
 import { Dispatch } from 'redux'
-import { RequestStatusT, setStatusAC, SetStatusAT } from './app-reducer'
+import { RequestStatusT, setStatusAC, SetStatusAT } from '../../app/app-reducer'
 
 export type RemoveTodolistActionType = ReturnType<typeof removeTodolistAC>
 export type AddTodolistActionType = ReturnType<typeof addTodolistAC>

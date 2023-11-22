@@ -1,9 +1,15 @@
-import { TasksStateType } from '../App'
-import { AddTodolistActionType, RemoveTodolistActionType, SetTodoListsActionType } from './todolists-reducer'
-import { TaskPriorities, TaskStatuses, TaskType, todolistsAPI, UpdateTaskModelType } from '../api/todolists-api'
+import { TasksStateType } from '../../../../app/App'
+import { AddTodolistActionType, RemoveTodolistActionType, SetTodoListsActionType } from '../../todolists-reducer'
+import {
+	TaskPriorities,
+	TaskStatuses,
+	TaskType,
+	todolistsAPI,
+	UpdateTaskModelType
+} from '../../../../api/todolists-api'
 import { Dispatch } from 'redux'
-import { AppRootStateType } from './store'
-import { setErrorAC, SetErrorAT, setStatusAC, SetStatusAT } from './app-reducer'
+import { AppRootStateType } from '../../../../app/store'
+import { setErrorAC, SetErrorAT, setStatusAC, SetStatusAT } from '../../../../app/app-reducer'
 
 export type RemoveTaskActionType = ReturnType<typeof removeTaskAC>
 export type AddTaskActionType = ReturnType<typeof addTaskAC>

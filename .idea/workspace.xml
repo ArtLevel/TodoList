@@ -67,9 +67,11 @@
       <recent name="$PROJECT_DIR$/src/state" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\github\TodoList\src\AppWithRedux" />
-      <recent name="E:\github\TodoList\src\AddItemForm" />
-      <recent name="E:\github\TodoList\src\App" />
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task" />
+      <recent name="$PROJECT_DIR$/src/features/TodolistsList" />
+      <recent name="$PROJECT_DIR$/src/features/TodolistsList/Todolist" />
+      <recent name="$PROJECT_DIR$/src/components/EditableSpan" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="E:\github\TodoList\src\App\hooks\UseTasks.tsx" />
