@@ -46,6 +46,16 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
 	}
 }
 
+type ErrorType = {
+	statusCode: number,
+	messages: [
+		{
+			message: string,
+			field: string
+		},
+	],
+	error: string
+}
 // actions
 export const removeTaskAC = (taskId: string, todolistId: string) =>
 	({ type: 'REMOVE-TASK', taskId, todolistId } as const)
