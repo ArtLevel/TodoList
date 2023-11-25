@@ -17,14 +17,20 @@ import { Todolist } from './Todolist/Todolist'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 
-export const TodolistsList: React.FC = () => {
+interface ITodolistsList {
+	demo?: boolean
+}
 
+export const TodolistsList: React.FC<ITodolistsList> = ({ demo = false }) => {
 	const todolists = useAppSelector<Array<TodolistDomainType>>(state => state.todolists)
 	const tasks = useAppSelector<TasksStateType>(state => state.tasks)
 
 	const dispatch = useAppDispatch()
 
 	useEffect(() => {
+		if (demo) {
+			return
+		}
 		const thunk = fetchTodolistsTC()
 		dispatch(thunk)
 	}, [])
@@ -81,18 +87,16 @@ export const TodolistsList: React.FC = () => {
 					return <Grid item key={tl.id}>
 						<Paper style={{ padding: '10px' }}>
 							<Todolist
-								id={tl.id}
-								title={tl.title}
+								todolist={tl}
 								tasks={allTodolistTasks}
 								removeTask={removeTask}
 								changeFilter={changeFilter}
 								addTask={addTask}
 								changeTaskStatus={changeStatus}
-								filter={tl.filter}
 								removeTodolist={removeTodolist}
 								changeTaskTitle={changeTaskTitle}
 								changeTodolistTitle={changeTodolistTitle}
-								entityStatus={tl.entityStatus}
+								demo={demo}
 							/>
 						</Paper>
 					</Grid>

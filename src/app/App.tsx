@@ -16,7 +16,11 @@ import LinearProgress from '@mui/material/LinearProgress'
 import { useAppSelector } from './store'
 import { ErrorSnackbar } from '../components/ErrorSnackbar/ErrorSnackbar'
 
-function App() {
+interface IApp {
+	demo?: boolean
+}
+
+const App: React.FC<IApp> = ({ demo = false }) => {
 	const status = useAppSelector(s => s.app.status)
 
 	return (
@@ -35,7 +39,7 @@ function App() {
 			</AppBar>
 			{status === 'loading' && <LinearProgress color='secondary' />}
 			<Container fixed>
-				<TodolistsList />
+				<TodolistsList demo={demo} />
 			</Container>
 		</div>
 	)
