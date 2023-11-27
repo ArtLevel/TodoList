@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1858285-c57d-4e2b-9ccc-9a051546f958" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddItemForm/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,28 +13,6 @@
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ArtLevel"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="ec9c3651-5f69-4ff2-ba12-721d5cdc0c8c" />
-        <option name="url" value="https://github.com/ArtLevel/TodoList.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="JsbtTreeLayoutManager">
-    <layout place="tools.popupGrunt">
-      <scroll-view-position x="0" y="0" />
-    </layout>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -50,51 +20,33 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2GK070ETuj7cwcTupZ2SBxLEmZ5" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2GihuhOiV9CI8hhYzy0IBmUYDpt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/artlevel/Documents/IT/TodoList",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "E:\\github\\TodoList\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/artlevel/Documents/IT/Social-TS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/state" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/app" />
-      <recent name="$PROJECT_DIR$/src/features/TodolistsList/Todolist/Task" />
-      <recent name="$PROJECT_DIR$/src/features/TodolistsList" />
-      <recent name="$PROJECT_DIR$/src/features/TodolistsList/Todolist" />
-      <recent name="$PROJECT_DIR$/src/components/EditableSpan" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="E:\github\TodoList\src\App\hooks\UseTasks.tsx" />
-      <recent name="E:\github\TodoList\src\App\hooks\UseTodoLists.tsx" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager">
@@ -115,44 +67,19 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c1858285-c57d-4e2b-9ccc-9a051546f958" name="Default Changelist" comment="" />
-      <created>1666121796708</created>
+      <changelist id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="" />
+      <created>1666877535565</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666121796708</updated>
-      <workItem from="1666121797999" duration="357000" />
-      <workItem from="1666177840693" duration="813000" />
-      <workItem from="1666178769095" duration="505000" />
-      <workItem from="1666284309634" duration="659000" />
-      <workItem from="1666285151532" duration="2061000" />
-      <workItem from="1699436472144" duration="2557000" />
-      <workItem from="1699541738519" duration="681000" />
-      <workItem from="1699542458599" duration="4149000" />
-      <workItem from="1699547785704" duration="8343000" />
-      <workItem from="1699556995148" duration="674000" />
-      <workItem from="1699602665747" duration="369000" />
-      <workItem from="1699954993432" duration="885000" />
-      <workItem from="1700052804448" duration="397000" />
-      <workItem from="1700208076028" duration="8059000" />
-      <workItem from="1700408754958" duration="240000" />
-      <workItem from="1700409241557" duration="1744000" />
-      <workItem from="1700415265456" duration="1653000" />
-      <workItem from="1700417094265" duration="257000" />
-      <workItem from="1700417370214" duration="1738000" />
-      <workItem from="1700465884297" duration="14948000" />
-      <workItem from="1700490962887" duration="44000" />
-      <workItem from="1700491404315" duration="44000" />
-      <workItem from="1700491501258" duration="129000" />
-      <workItem from="1700491656364" duration="6000" />
-      <workItem from="1700554145422" duration="9092000" />
-      <workItem from="1700668903669" duration="259000" />
-      <workItem from="1700752030631" duration="14730000" />
-      <workItem from="1700910547899" duration="5698000" />
+      <updated>1666877535565</updated>
+      <workItem from="1666877537161" duration="1127000" />
+      <workItem from="1666878696263" duration="145000" />
+      <workItem from="1681820724362" duration="322000" />
+      <workItem from="1700996602455" duration="1028000" />
+      <workItem from="1701003299581" duration="502000" />
+      <workItem from="1701073435842" duration="6119000" />
     </task>
     <servers />
   </component>
