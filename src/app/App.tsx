@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import './App.css'
 import { useAppDispatch, useAppSelector } from './store'
 import AppBar from '@mui/material/AppBar'
@@ -15,14 +15,21 @@ import { TodolistsList } from '../features/TodolistsList/TodolistsList'
 import { Login } from '../features/Login/Login'
 import { CircularProgress } from '@mui/material'
 import { initializeAppTC } from './app-reducer'
+import { logoutTC } from '../features/Login/auth-reducer'
 
 function App() {
 	const status = useAppSelector((state) => state.app.status)
 	const isInitialized = useAppSelector((state) => state.app.isInitialized)
+	const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
+
 	const dispatch = useAppDispatch()
 
 	useEffect(() => {
 		dispatch(initializeAppTC())
+	}, [])
+
+	const logoutHandler = useCallback(() => {
+		dispatch(logoutTC())
 	}, [])
 
 	if (!isInitialized) {
@@ -41,7 +48,7 @@ function App() {
 						<Typography variant='h6'>
 							News
 						</Typography>
-						<Button color='inherit'>Login</Button>
+						{isLoggedIn && <Button color='inherit' onClick={logoutHandler}>Log out</Button>}
 					</Toolbar>
 					{status === 'loading' && <LinearProgress />}
 				</AppBar>

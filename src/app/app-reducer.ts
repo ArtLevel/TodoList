@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux'
 import { authAPI } from '../api/todolists-api'
-import { setIsLoggedInAC } from '../features/Login/login-reducer'
+import { setIsLoggedInAC } from '../features/Login/auth-reducer'
 
 const initialState: InitialStateType = {
 	status: 'idle',
