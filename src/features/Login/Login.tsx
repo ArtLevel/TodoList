@@ -17,8 +17,6 @@ export const Login = () => {
 
 	const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
-	if (isLoggedIn) return <Navigate to='/' />
-
 	const formik = useFormik({
 		validate: (values) => {
 			if (!values.email) {
@@ -41,6 +39,8 @@ export const Login = () => {
 			dispatch(loginTC(values))
 		}
 	})
+
+	if (isLoggedIn) return <Navigate to='/' />
 
 	return <Grid container justifyContent={'center'}>
 		<Grid item justifyContent={'center'}>
