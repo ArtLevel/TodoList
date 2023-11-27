@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
-import { useAppSelector } from './store'
-import { RequestStatusType } from './app-reducer'
+import { useAppDispatch, useAppSelector } from './store'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
@@ -14,9 +13,22 @@ import { ErrorSnackbar } from '../components/ErrorSnackbar/ErrorSnackbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { TodolistsList } from '../features/TodolistsList/TodolistsList'
 import { Login } from '../features/Login/Login'
+import { CircularProgress } from '@mui/material'
+import { initializeAppTC } from './app-reducer'
 
 function App() {
-	const status = useAppSelector<RequestStatusType>((state) => state.app.status)
+	const status = useAppSelector((state) => state.app.status)
+	const isInitialized = useAppSelector((state) => state.app.isInitialized)
+	const dispatch = useAppDispatch()
+
+	useEffect(() => {
+		dispatch(initializeAppTC())
+	}, [])
+
+	if (!isInitialized) {
+		return <CircularProgress style={{ position: 'absolute', top: '50%', left: '50%' }} />
+	}
+
 	return (
 		<BrowserRouter>
 			<div className='App'>
