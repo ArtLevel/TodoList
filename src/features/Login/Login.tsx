@@ -8,11 +8,14 @@ import FormLabel from '@mui/material/FormLabel'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { useFormik } from 'formik'
-import { useAppDispatch } from '../../app/store'
+import { useAppDispatch, useAppSelector } from '../../app/store'
 import { loginTC } from './login-reducer'
+import { Navigate } from 'react-router-dom'
 
 export const Login = () => {
 	const dispatch = useAppDispatch()
+
+	const isLoggedIn = useAppSelector(s => s.auth.isLoggedIn)
 
 	const formik = useFormik({
 		validate: (values) => {
@@ -36,6 +39,8 @@ export const Login = () => {
 			dispatch(loginTC(values))
 		}
 	})
+
+	if (isLoggedIn) return <Navigate to='/' />
 
 	return <Grid container justifyContent={'center'}>
 		<Grid item justifyContent={'center'}>

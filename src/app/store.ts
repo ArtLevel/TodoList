@@ -4,6 +4,7 @@ import { AnyAction, applyMiddleware, combineReducers, legacy_createStore } from 
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import thunkMiddleware, { ThunkDispatch } from 'redux-thunk'
 import { appReducer } from './app-reducer'
+import { authReducer } from '../features/Login/login-reducer'
 
 
 // объединяя reducer-ы с помощью combineReducers,
@@ -11,7 +12,8 @@ import { appReducer } from './app-reducer'
 const rootReducer = combineReducers({
 	tasks: tasksReducer,
 	todolists: todolistsReducer,
-	app: appReducer
+	app: appReducer,
+	auth: authReducer
 })
 // непосредственно создаём store
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware))
