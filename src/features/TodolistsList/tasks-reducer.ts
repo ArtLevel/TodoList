@@ -3,7 +3,7 @@ import { Dispatch } from 'redux'
 import { AppRootStateType } from '../../app/store'
 import { setAppStatusAC } from '../../app/app-reducer'
 import { handleServerAppError, handleServerNetworkError } from '../../utils/error-utils'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, current, PayloadAction } from '@reduxjs/toolkit'
 import {
 	addTodolistAC,
 	AddTodolistActionType,
@@ -12,12 +12,26 @@ import {
 	setTodolistsAC,
 	SetTodolistsActionType
 } from './todolists-reducer'
+import { clearTasksAndTodolists } from '../../common/actions/common.actions'
 
 const initialState: TasksStateType = {}
 
 const slice = createSlice({
 	name: 'tasks',
 	reducers: {
+		// _removeTaskAC: {
+		// 	reducer: (state, action: PayloadAction<{ todolistId: string, taskId: string }>) => {
+		// 		state[action.payload.todolistId] = state[action.payload.todolistId].filter(t => t.id !== action.payload.taskId)
+		// 	},
+		// 	prepare: (taskId: string, todolistId: string) => {
+		// 		return {
+		// 			payload: {
+		// 				taskId,
+		// 				todolistId
+		// 			}
+		// 		}
+		// 	}
+		// },
 		removeTaskAC: (state, action: PayloadAction<{ todolistId: string, taskId: string }>) => {
 			state[action.payload.todolistId] = state[action.payload.todolistId].filter(t => t.id !== action.payload.taskId)
 		},
@@ -47,6 +61,11 @@ const slice = createSlice({
 			action.payload.todolists.forEach(tl => {
 				state[tl.id] = []
 			})
+		})
+		builder.addCase(clearTasksAndTodolists, (state, action) => {
+			console.log('state1', state)
+			console.log('state2', current(state))
+			return action.payload.tasks
 		})
 	},
 	initialState: initialState
