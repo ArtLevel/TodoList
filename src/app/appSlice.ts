@@ -1,9 +1,18 @@
 import { authAPI } from 'api/todolists-api'
 import { authActions } from 'features/Login/authSlice'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AppThunk } from 'app/store'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type RequestStatusType = 'idle' | 'loading' | 'succeeded' | 'failed'
+
+export const initializeAppTC = createAsyncThunk('app/initializeApp', async (param, { dispatch }) => {
+	const res = await authAPI.me()
+	if (res.data.resultCode === 0) {
+		dispatch(authActions.setIsLoggedIn({ isLoggedIn: true }))
+	} else {
+
+	}
+	dispatch(appActions.setAppInitialized({ isInitialized: true }))
+})
 
 const slice = createSlice({
 	name: 'app',
@@ -25,16 +34,6 @@ const slice = createSlice({
 	}
 })
 
-export const initializeAppTC = (): AppThunk => (dispatch) => {
-	authAPI.me().then((res) => {
-		if (res.data.resultCode === 0) {
-			dispatch(authActions.setIsLoggedIn({ isLoggedIn: true }))
-		} else {
-		}
-
-		dispatch(appActions.setAppInitialized({ isInitialized: true }))
-	})
-}
 
 export const appReducer = slice.reducer
 export const appActions = slice.actions
