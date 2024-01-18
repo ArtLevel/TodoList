@@ -13,27 +13,27 @@ import {
 } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import { Login } from 'features/auth/Login'
-import { authThunks, logout } from 'features/auth/auth.reducer'
+import { authThunks } from 'features/auth/auth.reducer'
 import './App.css'
 import { TodolistsList } from 'features/TodolistsList/TodolistsList'
 import { ErrorSnackbar } from 'common/components'
-import { useAppDispatch } from 'common/hooks'
-import { selectIsLoggedIn } from 'features/auth/auth.selectors'
 import { selectAppStatus, selectIsInitialized } from 'app/app.selectors'
+import { useActions } from 'common/hooks/useActions'
+import { selectIsLoggedIn } from 'features/auth/auth.selectors'
 
 function App() {
 	const status = useSelector(selectAppStatus)
 	const isInitialized = useSelector(selectIsInitialized)
 	const isLoggedIn = useSelector(selectIsLoggedIn)
 
-	const dispatch = useAppDispatch()
+	const { initializeApp, logout } = useActions(authThunks)
 
 	useEffect(() => {
-		dispatch(authThunks.initializeApp())
+		initializeApp()
 	}, [])
 
 	const logoutHandler = useCallback(() => {
-		dispatch(logout())
+		logout()
 	}, [])
 
 	if (!isInitialized) {

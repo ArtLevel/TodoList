@@ -8,6 +8,7 @@ import {
 	handleServerNetworkError
 } from 'common/utils'
 import { ResultCode } from 'common/enums'
+import { thunkTryCatch } from 'common/utils/thunkTryCatch'
 
 const slice = createSlice({
 	name: 'auth',
@@ -82,8 +83,10 @@ export const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, undefined>(
 export const initializeApp = createAppAsyncThunk<
 	{ isLoggedIn: boolean },
 	undefined
->(`${slice.name}/initializeApp`, async (_, { dispatch, rejectWithValue }) => {
-	try {
+>(`${slice.name}/initializeApp`, async (_, thunkAPI) => {
+	const { dispatch, rejectWithValue } = thunkAPI
+
+	return thunkTryCatch(thunkAPI, async () => {
 		const res = await authAPI.me()
 		if (res.data.resultCode === 0) {
 			return { isLoggedIn: true }
@@ -91,14 +94,10 @@ export const initializeApp = createAppAsyncThunk<
 			handleServerAppError(res.data, dispatch)
 			return rejectWithValue(null)
 		}
-	} catch (error) {
-		handleServerNetworkError(error, dispatch)
-		return rejectWithValue(null)
-	} finally {
+	}).finally(() => {
 		dispatch(appActions.setAppInitialized({ isInitialized: true }))
-	}
+	})
 })
 
 export const authReducer = slice.reducer
-export const authActions = slice.actions
-export const authThunks = { login, initializeApp }
+export const authThunks = { login, initializeApp, logout }
