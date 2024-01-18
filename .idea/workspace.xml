@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/common/utils/thunkTryCatch.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/types/common.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/types/common.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/create-app-async-thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/create-app-async-thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/utils/handle-server-app-error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/handle-server-app-error.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/todolists.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/todolists.api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/auth.api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/tasks.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/auth.reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +60,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/home/artlevel/Documents/IT/TodoList/node_modules/prettier",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
     "ts.external.directory.path": "/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -132,7 +128,7 @@
       <workItem from="1705486388362" duration="600000" />
       <workItem from="1705513324797" duration="2783000" />
       <workItem from="1705567907992" duration="10645000" />
-      <workItem from="1705589712766" duration="7712000" />
+      <workItem from="1705589712766" duration="9362000" />
     </task>
     <servers />
   </component>
