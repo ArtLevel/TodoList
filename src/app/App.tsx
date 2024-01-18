@@ -1,13 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
-import './App.css'
-import { TodolistsList } from 'features/TodolistsList/TodolistsList'
-import { ErrorSnackbar } from 'components/ErrorSnackbar/ErrorSnackbar'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppRootStateType } from './store'
-import { initializeAppTC, RequestStatusType } from 'app/appSlice'
+import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Login } from 'features/Login/Login'
-import { logoutTC } from 'features/Login/authSlice'
 import {
 	AppBar,
 	Button,
@@ -19,23 +12,28 @@ import {
 	Typography
 } from '@mui/material'
 import { Menu } from '@mui/icons-material'
+import { Login } from 'features/auth/Login'
+import { authThunks, logout } from 'features/auth/auth.reducer'
+import './App.css'
+import { TodolistsList } from 'features/TodolistsList/TodolistsList'
+import { ErrorSnackbar } from 'common/components'
+import { useAppDispatch } from 'common/hooks'
+import { selectIsLoggedIn } from 'features/auth/auth.selectors'
+import { selectAppStatus, selectIsInitialized } from 'app/app.selectors'
 
-type PropsType = {
-	demo?: boolean
-}
+function App() {
+	const status = useSelector(selectAppStatus)
+	const isInitialized = useSelector(selectIsInitialized)
+	const isLoggedIn = useSelector(selectIsLoggedIn)
 
-function App({ demo = false }: PropsType) {
-	const status = useSelector<AppRootStateType, RequestStatusType>((state) => state.app.status)
-	const isInitialized = useSelector<AppRootStateType, boolean>((state) => state.app.isInitialized)
-	const isLoggedIn = useSelector<AppRootStateType, boolean>((state) => state.auth.isLoggedIn)
-	const dispatch = useDispatch<any>()
+	const dispatch = useAppDispatch()
 
 	useEffect(() => {
-		dispatch(initializeAppTC())
+		dispatch(authThunks.initializeApp())
 	}, [])
 
 	const logoutHandler = useCallback(() => {
-		dispatch(logoutTC())
+		dispatch(logout())
 	}, [])
 
 	if (!isInitialized) {
@@ -73,7 +71,7 @@ function App({ demo = false }: PropsType) {
 				</AppBar>
 				<Container fixed>
 					<Routes>
-						<Route path={'/'} element={<TodolistsList demo={demo} />} />
+						<Route path={'/'} element={<TodolistsList />} />
 						<Route path={'/login'} element={<Login />} />
 					</Routes>
 				</Container>
