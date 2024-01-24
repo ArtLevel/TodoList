@@ -17,10 +17,12 @@ export const Task = React.memo((props: TaskPropsType) => {
 
 	const onClickHandler = useCallback(
 		() =>
-			tasksThunks.removeTask({
-				taskId: props.task.id,
-				todolistId: props.todolistId
-			}),
+			dispatch(
+				tasksThunks.removeTask({
+					taskId: props.task.id,
+					todolistId: props.todolistId
+				})
+			),
 		[props.task.id, props.todolistId]
 	)
 
