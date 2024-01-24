@@ -14,7 +14,6 @@ import { useAppDispatch } from 'common/hooks'
 import { selectIsLoggedIn } from 'features/auth/reducers/selectors/auth.selectors'
 import { selectTasks } from 'features/TodolistsList/reducers/selectors/tasks.selectors'
 import { selectTodolists } from 'features/TodolistsList/reducers/selectors/todolists.selectors'
-import { TaskStatuses } from 'common/enums'
 
 export const TodolistsList = () => {
 	const todolists = useSelector(selectTodolists)
@@ -30,32 +29,8 @@ export const TodolistsList = () => {
 		dispatch(todolistsThunks.fetchTodolists())
 	}, [])
 
-	const removeTask = useCallback(function (taskId: string, todolistId: string) {
-		dispatch(tasksThunks.removeTask({ taskId, todolistId }))
-	}, [])
-
 	const addTask = useCallback(function (title: string, todolistId: string) {
 		dispatch(tasksThunks.addTask({ title, todolistId }))
-	}, [])
-
-	const changeStatus = useCallback(function (
-		taskId: string,
-		status: TaskStatuses,
-		todolistId: string
-	) {
-		dispatch(
-			tasksThunks.updateTask({ taskId, domainModel: { status }, todolistId })
-		)
-	}, [])
-
-	const changeTaskTitle = useCallback(function (
-		taskId: string,
-		title: string,
-		todolistId: string
-	) {
-		dispatch(
-			tasksThunks.updateTask({ taskId, domainModel: { title }, todolistId })
-		)
 	}, [])
 
 	const changeFilter = useCallback(function (
@@ -99,12 +74,9 @@ export const TodolistsList = () => {
 								<Todolist
 									todolist={tl}
 									tasks={allTodolistTasks}
-									removeTask={removeTask}
 									changeFilter={changeFilter}
 									addTask={addTask}
-									changeTaskStatus={changeStatus}
 									removeTodolist={removeTodolist}
-									changeTaskTitle={changeTaskTitle}
 									changeTodolistTitle={changeTodolistTitle}
 								/>
 							</Paper>
