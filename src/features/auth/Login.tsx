@@ -13,8 +13,8 @@ import {
 	TextField
 } from '@mui/material'
 import { useAppDispatch } from 'common/hooks'
-import { selectIsLoggedIn } from 'features/auth/auth.selectors'
-import { authThunks } from 'features/auth/auth.reducer'
+import { selectIsLoggedIn } from 'features/auth/reducers/selectors/auth.selectors'
+import { authThunks } from 'features/auth/reducers/auth.reducer'
 import { BaseResponseType } from 'common/types/common.types'
 
 export const Login = () => {

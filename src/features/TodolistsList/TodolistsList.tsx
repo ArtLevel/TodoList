@@ -4,16 +4,16 @@ import {
 	FilterValuesType,
 	todolistsActions,
 	todolistsThunks
-} from 'features/TodolistsList/todolists.reducer'
-import { tasksThunks } from 'features/TodolistsList/tasks.reducer'
+} from 'features/TodolistsList/reducers/todolists.reducer'
+import { tasksThunks } from 'features/TodolistsList/reducers/tasks.reducer'
 import { Grid, Paper } from '@mui/material'
 import { AddItemForm } from 'common/components'
 import { Todolist } from './Todolist/Todolist'
 import { Navigate } from 'react-router-dom'
 import { useAppDispatch } from 'common/hooks'
-import { selectIsLoggedIn } from 'features/auth/auth.selectors'
-import { selectTasks } from 'features/TodolistsList/tasks.selectors'
-import { selectTodolists } from 'features/TodolistsList/todolists.selectors'
+import { selectIsLoggedIn } from 'features/auth/reducers/selectors/auth.selectors'
+import { selectTasks } from 'features/TodolistsList/reducers/selectors/tasks.selectors'
+import { selectTodolists } from 'features/TodolistsList/reducers/selectors/todolists.selectors'
 import { TaskStatuses } from 'common/enums'
 
 export const TodolistsList = () => {

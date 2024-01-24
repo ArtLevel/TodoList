@@ -13,13 +13,16 @@ import {
 } from '@mui/material'
 import { Menu } from '@mui/icons-material'
 import { Login } from 'features/auth/Login'
-import { authThunks } from 'features/auth/auth.reducer'
-import './App.css'
+import { authThunks } from 'features/auth/reducers/auth.reducer'
 import { TodolistsList } from 'features/TodolistsList/TodolistsList'
 import { ErrorSnackbar } from 'common/components'
-import { selectAppStatus, selectIsInitialized } from 'app/app.selectors'
+import {
+	selectAppStatus,
+	selectIsInitialized
+} from 'app/reducers/selectors/app.selectors'
 import { useActions } from 'common/hooks/useActions'
-import { selectIsLoggedIn } from 'features/auth/auth.selectors'
+import { selectIsLoggedIn } from 'features/auth/reducers/selectors/auth.selectors'
+import './App.css'
 
 function App() {
 	const status = useSelector(selectAppStatus)
