@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { appActions } from 'app/reducers/app.reducer'
-import { todolistsThunks } from 'features/TodolistsList/reducers/todolists.reducer'
+import { appActions } from 'app/app.reducer'
+import { todolistsThunks } from 'features/TodolistsList/todolists.reducer'
 import {
 	AddTaskArgType,
 	RemoveTaskArgType,
@@ -12,27 +12,20 @@ import {
 import {
 	createAppAsyncThunk,
 	handleServerAppError,
-	handleServerNetworkError
+	thunkTryCatch
 } from 'common/utils'
 import { ResultCode, TaskPriorities, TaskStatuses } from 'common/enums'
 import { clearTasksAndTodolists } from 'common/actions'
-import { thunkTryCatch } from 'common/utils/thunkTryCatch'
 
 const fetchTasks = createAppAsyncThunk<
 	{ tasks: TaskType[]; todolistId: string },
 	string
 >('tasks/fetchTasks', async (todolistId, thunkAPI) => {
-	const { dispatch, rejectWithValue } = thunkAPI
-	try {
-		dispatch(appActions.setAppStatus({ status: 'loading' }))
+	return thunkTryCatch(thunkAPI, async () => {
 		const res = await todolistsApi.getTasks(todolistId)
 		const tasks = res.data.items
-		dispatch(appActions.setAppStatus({ status: 'succeeded' }))
 		return { tasks, todolistId }
-	} catch (e) {
-		handleServerNetworkError(e, dispatch)
-		return rejectWithValue(null)
-	}
+	})
 })
 
 const addTask = createAppAsyncThunk<{ task: TaskType }, AddTaskArgType>(
@@ -82,7 +75,6 @@ const updateTask = createAppAsyncThunk<UpdateTaskArgType, UpdateTaskArgType>(
 				apiModel
 			)
 			if (res.data.resultCode === ResultCode.Success) {
-				dispatch(appActions.setAppStatus({ status: 'succeeded' }))
 				return arg
 			} else {
 				handleServerAppError(res.data, dispatch)
@@ -96,11 +88,9 @@ const removeTask = createAppAsyncThunk<RemoveTaskArgType, RemoveTaskArgType>(
 	'tasks/removeTask',
 	async (arg, thunkAPI) => {
 		const { dispatch, rejectWithValue } = thunkAPI
-
 		return thunkTryCatch(thunkAPI, async () => {
 			const res = await todolistsApi.deleteTask(arg)
 			if (res.data.resultCode === ResultCode.Success) {
-				dispatch(appActions.setAppStatus({ status: 'succeeded' }))
 				return arg
 			} else {
 				handleServerAppError(res.data, dispatch)
@@ -155,7 +145,6 @@ const slice = createSlice({
 })
 
 export const tasksReducer = slice.reducer
-export const tasksActions = slice.actions
 export const tasksThunks = { fetchTasks, addTask, updateTask, removeTask }
 
 // types
@@ -168,6 +157,4 @@ export type UpdateDomainTaskModelType = {
 	deadline?: string
 }
 
-export type TasksStateType = {
-	[key: string]: Array<TaskType>
-}
+export type TasksStateType = Record<string, TaskType[]>

@@ -1,6 +1,4 @@
 import React from 'react'
-import { useFormik } from 'formik'
-import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import {
 	Button,
@@ -12,44 +10,11 @@ import {
 	Grid,
 	TextField
 } from '@mui/material'
-import { useAppDispatch } from 'common/hooks'
-import { selectIsLoggedIn } from 'features/auth/reducers/selectors/auth.selectors'
-import { authThunks } from 'features/auth/reducers/auth.reducer'
-import { BaseResponseType } from 'common/types/common.types'
+import s from 'features/auth/ui/login/login.module.css'
+import { useLogin } from 'features/auth/lib/useLogin'
 
 export const Login = () => {
-	const dispatch = useAppDispatch()
-
-	const isLoggedIn = useSelector(selectIsLoggedIn)
-
-	const formik = useFormik({
-		validate: (values) => {
-			// if (!values.email) {
-			// 	return {
-			// 		email: 'Email is required'
-			// 	}
-			// }
-			// if (!values.password) {
-			// 	return {
-			// 		password: 'Password is required'
-			// 	}
-			// }
-		},
-		initialValues: {
-			email: '',
-			password: '',
-			rememberMe: false
-		},
-		onSubmit: (values, formikHelpers) => {
-			dispatch(authThunks.login(values))
-				.unwrap()
-				.catch((res: BaseResponseType) => {
-					res.fieldsErrors?.forEach((field) => {
-						formikHelpers.setFieldError(field.field, field.error)
-					})
-				})
-		}
-	})
+	const { formik, isLoggedIn } = useLogin()
 
 	if (isLoggedIn) {
 		return <Navigate to={'/'} />
@@ -66,6 +31,7 @@ export const Login = () => {
 								<a
 									href={'https://social-network.samuraijs.com/'}
 									target={'_blank'}
+									rel='noreferrer'
 								>
 									here
 								</a>
@@ -80,16 +46,18 @@ export const Login = () => {
 								margin='normal'
 								{...formik.getFieldProps('email')}
 							/>
-							{formik.errors.email ? <div>{formik.errors.email}</div> : null}
+							{formik.touched.email && formik.errors.email && (
+								<p className={s.error}>{formik.errors.email}</p>
+							)}
 							<TextField
 								type='password'
 								label='Password'
 								margin='normal'
 								{...formik.getFieldProps('password')}
 							/>
-							{formik.errors.password ? (
-								<div>{formik.errors.password}</div>
-							) : null}
+							{formik.touched.password && formik.errors.password && (
+								<p className={s.error}>{formik.errors.password}</p>
+							)}
 							<FormControlLabel
 								label={'Remember me'}
 								control={
@@ -99,7 +67,12 @@ export const Login = () => {
 									/>
 								}
 							/>
-							<Button type={'submit'} variant={'contained'} color={'primary'}>
+							<Button
+								type={'submit'}
+								variant={'contained'}
+								disabled={!(formik.isValid && formik.dirty)}
+								color={'primary'}
+							>
 								Login
 							</Button>
 						</FormGroup>
