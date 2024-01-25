@@ -104,7 +104,6 @@ export const TodolistsList = () => {
 								<Todolist
 									todolist={tl}
 									tasks={allTodolistTasks}
-									removeTask={removeTask}
 									changeFilter={changeFilter}
 									addTask={addTask}
 									changeTaskStatus={changeStatus}

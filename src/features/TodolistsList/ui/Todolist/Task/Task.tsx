@@ -4,6 +4,8 @@ import { Delete } from '@mui/icons-material'
 import { EditableSpan } from 'common/components'
 import { TaskStatuses } from 'common/enums'
 import { TaskType } from 'features/TodolistsList/api/tasks.api'
+import { useActions } from 'common/hooks'
+import { tasksThunks } from 'features/TodolistsList/model/tasks/tasks.reducer'
 
 type TaskPropsType = {
 	task: TaskType
@@ -18,14 +20,14 @@ type TaskPropsType = {
 		newTitle: string,
 		todolistId: string
 	) => void
-	removeTask: (taskId: string, todolistId: string) => void
 }
 
 export const Task = React.memo((props: TaskPropsType) => {
-	const onClickHandler = useCallback(
-		() => props.removeTask(props.task.id, props.todolistId),
-		[props.task.id, props.todolistId]
-	)
+	const { removeTask } = useActions(tasksThunks)
+
+	const onClickHandler = () => {
+		removeTask({ taskId: props.task.id, todolistId: props.todolistId })
+	}
 
 	const onChangeHandler = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => {
