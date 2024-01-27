@@ -9,10 +9,10 @@ import {
 import { Menu } from '@mui/icons-material'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectAppStatus } from 'app/app.selectors'
+import { selectAppStatus } from 'app/model/app.selectors'
 import { selectIsLoggedIn } from 'features/auth/model/auth.selectors'
 import { useActions } from 'common/hooks'
-import { authThunks } from 'features/auth/model/auth.slice'
+import { authThunks } from 'features/auth/model/authSlice'
 
 export const Header = () => {
 	const status = useSelector(selectAppStatus)

@@ -4,15 +4,15 @@ import { BrowserRouter } from 'react-router-dom'
 import { CircularProgress } from '@mui/material'
 import { ErrorSnackbar } from 'common/components'
 import { useActions } from 'common/hooks'
-import { selectIsInitialized } from 'app/app.selectors'
-import { authThunks } from 'features/auth/model/auth.slice'
+import { selectIsInitialized } from 'app/model/app.selectors'
+import { authThunks } from 'features/auth/model/authSlice'
 import { Routing } from 'app/ui/Routing'
 import { Header } from 'app/ui/Header'
 
 function App() {
 	const isInitialized = useSelector(selectIsInitialized)
 
-	const { initializeApp, logout } = useActions(authThunks)
+	const { initializeApp } = useActions(authThunks)
 
 	useEffect(() => {
 		initializeApp()
