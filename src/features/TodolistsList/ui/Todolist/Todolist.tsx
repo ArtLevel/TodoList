@@ -16,19 +16,19 @@ type Props = {
 export const Todolist = React.memo(function ({ todolist, tasks }: Props) {
 	const { fetchTasks, addTask } = useActions(tasksThunks)
 
+	const addTodo = (title: string) => {
+		return addTask({ title, todolistId: todolist.id }).unwrap()
+	}
+
 	useEffect(() => {
 		fetchTasks(todolist.id)
 	}, [])
-
-	const addTaskCb = (title: string) => {
-		return addTask({ title, todolistId: todolist.id }).unwrap()
-	}
 
 	return (
 		<div>
 			<TodolistTitle todolist={todolist} />
 			<AddItemForm
-				addItem={addTaskCb}
+				addItem={addTodo}
 				disabled={todolist.entityStatus === 'loading'}
 			/>
 			<Tasks tasks={tasks} todolist={todolist} />

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { todolistsThunks } from 'features/TodolistsList/model/todolists/todolistsSlice'
 import { Grid, Paper } from '@mui/material'
@@ -18,15 +18,15 @@ export const TodolistsList = () => {
 	const { fetchTodolists, addTodolist: addTodolistThunk } =
 		useActions(todolistsThunks)
 
+	const addTodolist = (title: string) => {
+		return addTodolistThunk(title).unwrap()
+	}
+
 	useEffect(() => {
 		if (!isLoggedIn) {
 			return
 		}
 		fetchTodolists()
-	}, [])
-
-	const addTodolist = useCallback((title: string) => {
-		return addTodolistThunk(title).unwrap()
 	}, [])
 
 	if (!isLoggedIn) {
