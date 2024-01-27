@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconButton, TextField } from '@mui/material'
 import { AddBox } from '@mui/icons-material'
-import { useAddItemForm } from 'common/components/AddItemForm/model/useAddItemForm'
+import { useAddItemForm } from 'common/components/AddItemForm/lib/useAddItemForm'
 
 type Props = {
 	addItem: (title: string) => Promise<any> // { task: TaskType | todolist: TodolistType }

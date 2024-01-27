@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/model/useAddItemForm.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/appSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/model/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/lib/useAddItemForm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/lib/useLogin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +80,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/common/components/AddItemForm/lib" />
       <recent name="$PROJECT_DIR$/src/common/components/AddItemForm/ui" />
       <recent name="$PROJECT_DIR$/src/app/ui" />
       <recent name="$PROJECT_DIR$/src/app/model/__tests__" />
       <recent name="$PROJECT_DIR$/src/app/model" />
-      <recent name="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/__tests__" />
     </key>
   </component>
   <component name="RunManager">
@@ -151,7 +155,7 @@
       <workItem from="1706174005369" duration="2171000" />
       <workItem from="1706194906396" duration="14328000" />
       <workItem from="1706261783996" duration="6000" />
-      <workItem from="1706353811862" duration="1905000" />
+      <workItem from="1706353811862" duration="5420000" />
     </task>
     <servers />
   </component>

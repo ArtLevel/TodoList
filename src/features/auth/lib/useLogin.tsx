@@ -1,17 +1,19 @@
-import { useActions } from '../../../common/hooks'
+import { useActions, useAppDispatch } from 'common/hooks'
 import { authThunks } from 'features/auth/model/authSlice'
 import { useSelector } from 'react-redux'
-import { selectIsLoggedIn } from '../model/auth.selectors'
+import { selectCaptcha, selectIsLoggedIn } from '../model/auth.selectors'
 import { FormikHelpers, useFormik } from 'formik'
 import { LoginParamsType } from '../api/auth.api'
-import { BaseResponseType } from '../../../common/types'
+import { BaseResponseType } from 'common/types'
 
-type FormikErrorType = Partial<Omit<LoginParamsType, 'captcha'>>
+type FormikErrorType = Partial<LoginParamsType>
 
 export const useLogin = () => {
 	const { login } = useActions(authThunks)
-
+	const captchaUrl = useSelector(selectCaptcha)
 	const isLoggedIn = useSelector(selectIsLoggedIn)
+
+	const dispatch = useAppDispatch()
 
 	const formik = useFormik({
 		validate: (values) => {
@@ -24,6 +26,10 @@ export const useLogin = () => {
 				errors.email = 'Invalid email address'
 			}
 
+			// if (formik.errors.captcha) {
+			// 	errors.captcha = 'Incorrect anti-bot symbols'
+			// }
+
 			if (!values.password) {
 				errors.password = 'Required'
 			} else if (values.password.length < 3) {
@@ -35,18 +41,22 @@ export const useLogin = () => {
 		initialValues: {
 			email: '',
 			password: '',
-			rememberMe: false
+			rememberMe: false,
+			captcha: ''
 		},
 		onSubmit: (values, formikHelpers: FormikHelpers<LoginParamsType>) => {
 			login(values)
 				.unwrap()
 				.catch((reason: BaseResponseType) => {
 					reason.fieldsErrors?.forEach((fieldError) => {
+						if (fieldError.field === 'captcha') {
+							dispatch(authThunks.captcha())
+						}
 						formikHelpers.setFieldError(fieldError.field, fieldError.error)
 					})
 				})
 		}
 	})
 
-	return { formik, isLoggedIn }
+	return { formik, isLoggedIn, captchaUrl }
 }

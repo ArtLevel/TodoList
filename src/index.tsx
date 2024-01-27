@@ -18,6 +18,6 @@ root.render(
 // 4 yes
 // 5 yes
 // 6 yes
-// 7
-// 8
+// 7 yes
+// 8 yes
 // 9

@@ -26,10 +26,20 @@ const login = createAppAsyncThunk<{ isLoggedIn: boolean }, LoginParamsType>(
 	}
 )
 
+const captcha = createAppAsyncThunk('auth/captcha', async (arg, thunkAPI) => {
+	const { dispatch } = thunkAPI
+
+	const res = await authAPI.captcha()
+	dispatch(authActions.setCaptcha({ url: res.data.url }))
+})
+
 const logout = createAppAsyncThunk<{ isLoggedIn: boolean }, void>(
 	'auth/logout',
 	async (_, thunkAPI) => {
 		const { dispatch, rejectWithValue } = thunkAPI
+
+		dispatch(authActions.setCaptcha({ url: '' }))
+		
 		return thunkTryCatch(thunkAPI, async () => {
 			const res = await authAPI.logout()
 			if (res.data.resultCode === ResultCode.Success) {
@@ -63,9 +73,14 @@ const initializeApp = createAppAsyncThunk<{ isLoggedIn: boolean }, void>(
 const slice = createSlice({
 	name: 'auth',
 	initialState: {
-		isLoggedIn: false
+		isLoggedIn: false,
+		captcha: ''
 	},
-	reducers: {},
+	reducers: {
+		setCaptcha: (state, action: PayloadAction<{ url: string }>) => {
+			state.captcha = action.payload.url
+		}
+	},
 	extraReducers: (builder) => {
 		builder.addMatcher(
 			isFulfilled(
@@ -81,4 +96,5 @@ const slice = createSlice({
 })
 
 export const authSlice = slice.reducer
-export const authThunks = { login, logout, initializeApp }
+export const authActions = slice.actions
+export const authThunks = { login, logout, initializeApp, captcha }
