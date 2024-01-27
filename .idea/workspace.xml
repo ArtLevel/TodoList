@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/model/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/appSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/model/useAddItemForm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/lib/useAddItemForm.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/lib/useLogin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,23 +50,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/artlevel/Documents/IT&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/artlevel/Documents/IT/TodoList/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Jest.captcha should be correct.executor": "Run",
+    "Jest.isLoggedIn should be correct.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/artlevel/Documents/IT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/artlevel/Documents/IT/TodoList/node_modules/react-scripts",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/home/artlevel/Documents/IT/TodoList/node_modules/prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "ts.external.directory.path": "/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -87,7 +82,31 @@
       <recent name="$PROJECT_DIR$/src/app/model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.captcha should be correct">
+    <configuration name="captcha should be correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" />
+      <test-names>
+        <test-name value="captcha should be correct" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="isLoggedIn should be correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" />
+      <test-names>
+        <test-name value="isLoggedIn should be correct" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -100,6 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.captcha should be correct" />
+        <item itemvalue="Jest.isLoggedIn should be correct" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -155,7 +176,7 @@
       <workItem from="1706174005369" duration="2171000" />
       <workItem from="1706194906396" duration="14328000" />
       <workItem from="1706261783996" duration="6000" />
-      <workItem from="1706353811862" duration="5420000" />
+      <workItem from="1706353811862" duration="6081000" />
     </task>
     <servers />
   </component>
