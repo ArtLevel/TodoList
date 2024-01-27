@@ -1,73 +1,49 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-  AppBar,
-  Button,
-  CircularProgress,
-  Container,
-  IconButton,
-  LinearProgress,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import { Menu } from "@mui/icons-material";
-import { Login } from "features/auth/ui/login/login";
-import { TodolistsList } from "features/TodolistsList/ui/TodolistsList";
-import { ErrorSnackbar } from "common/components";
-import { useActions } from "common/hooks";
-import { selectIsLoggedIn } from "features/auth/model/auth.selectors";
-import { selectAppStatus, selectIsInitialized } from "app/app.selectors";
-import { authThunks } from "features/auth/model/auth.slice";
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import { CircularProgress } from '@mui/material'
+import { ErrorSnackbar } from 'common/components'
+import { useActions } from 'common/hooks'
+import { selectIsInitialized } from 'app/app.selectors'
+import { authThunks } from 'features/auth/model/auth.slice'
+import { Routing } from 'app/ui/Routing'
+import { Header } from 'app/ui/Header'
 
 function App() {
-  const status = useSelector(selectAppStatus);
-  const isInitialized = useSelector(selectIsInitialized);
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+	const isInitialized = useSelector(selectIsInitialized)
 
-  const { initializeApp, logout } = useActions(authThunks);
+	const { initializeApp, logout } = useActions(authThunks)
 
-  useEffect(() => {
-    initializeApp();
-  }, []);
+	useEffect(() => {
+		initializeApp()
+	}, [])
 
-  const logoutHandler = () => logout();
+	if (!isInitialized) {
+		return (
+			<div
+				style={{
+					position: 'fixed',
+					top: '30%',
+					textAlign: 'center',
+					width: '100%'
+				}}
+			>
+				<CircularProgress />
+			</div>
+		)
+	}
 
-  if (!isInitialized) {
-    return (
-      <div style={{ position: "fixed", top: "30%", textAlign: "center", width: "100%" }}>
-        <CircularProgress />
-      </div>
-    );
-  }
+	return (
+		<BrowserRouter>
+			<div className='App'>
+				<ErrorSnackbar />
 
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <ErrorSnackbar />
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <Menu />
-            </IconButton>
-            <Typography variant="h6">News</Typography>
-            {isLoggedIn && (
-              <Button color="inherit" onClick={logoutHandler}>
-                Log out
-              </Button>
-            )}
-          </Toolbar>
-          {status === "loading" && <LinearProgress />}
-        </AppBar>
-        <Container fixed>
-          <Routes>
-            <Route path={"/"} element={<TodolistsList />} />
-            <Route path={"/login"} element={<Login />} />
-          </Routes>
-        </Container>
-      </div>
-    </BrowserRouter>
-  );
+				<Header />
+
+				<Routing />
+			</div>
+		</BrowserRouter>
+	)
 }
 
-export default App;
+export default App
