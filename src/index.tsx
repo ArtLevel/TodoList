@@ -1,23 +1,17 @@
 import React from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import './index.css'
-import App from 'app/ui/App'
-import { store } from 'app/model/store'
+import * as serviceWorker from './serviceWorker'
+import App from './app/App'
+import { store } from './app/store'
 import { Provider } from 'react-redux'
 
-const root = createRoot(document.getElementById('root') as HTMLElement)
-root.render(
+ReactDOM.render(
 	<Provider store={store}>
 		<App />
-	</Provider>
-)
+	</Provider>, document.getElementById('root'))
 
-// 1 yes
-// 2 yes
-// 3 yes
-// 4 yes
-// 5 yes
-// 6 yes
-// 7 yes
-// 8 yes
-// 9
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister()

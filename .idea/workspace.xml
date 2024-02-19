@@ -4,9 +4,75 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" afterDir="false" />
+    <list default="true" id="de638fc8-9c22-47bf-a43b-9ff3d9d780f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/todo16v2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/__tests__/app.reducer.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/app.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/appSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/Routing.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/actions/common.actions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/actions/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/api/common.api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/api/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/lib/useAddItemForm.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/AddItemForm/ui/AddItemForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/common.enums.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/useActions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/hooks/useAppDispatch.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/types/common.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/types/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/create-app-async-thunk.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/handle-server-app-error.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/handle-server-network-error.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/utils/thunk-try-catch.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/api/tasks/tasksApi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/api/tasks/tasksApi.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/api/todolists/todolistsApi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/__tests__/todolistsTasksSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasks.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasksSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/tasks/tasksSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolists.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolistsSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/model/todolists/todolistsSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Task/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Tasks/Tasks.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/ui/TodolistsList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/auth.api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/lib/useLogin.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/login/login.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,22 +85,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ArtLevel&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="ec9c3651-5f69-4ff2-ba12-721d5cdc0c8c" />
-        <option name="url" value="git@github.com:ArtLevel/TodoList.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/app/App.tsx" root0="FORCE_HIGHLIGHTING" />
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -42,156 +96,56 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2GihuhOiV9CI8hhYzy0IBmUYDpt" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2cZzPQReIdMdwI8dTz8MfbV2Oik" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Jest.captcha should be correct.executor": "Run",
-    "Jest.isLoggedIn should be correct.executor": "Run",
+    "Node.js.1.js.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/artlevel/Documents/IT",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/artlevel/Documents/IT/TodoList/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "/home/artlevel/Documents/IT/TodoList/node_modules/prettier",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/home/artlevel/Documents/IT/TodoList/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/common/components/AddItemForm/lib" />
-      <recent name="$PROJECT_DIR$/src/common/components/AddItemForm/ui" />
-      <recent name="$PROJECT_DIR$/src/app/ui" />
-      <recent name="$PROJECT_DIR$/src/app/model/__tests__" />
-      <recent name="$PROJECT_DIR$/src/app/model" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Jest.captcha should be correct">
-    <configuration name="captcha should be correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" />
-      <test-names>
-        <test-name value="captcha should be correct" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="isLoggedIn should be correct" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/features/auth/model/__tests__/authSlice.test.ts" />
-      <test-names>
-        <test-name value="isLoggedIn should be correct" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+  <component name="RunManager">
+    <configuration name="1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/1.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.captcha should be correct" />
-        <item itemvalue="Jest.isLoggedIn should be correct" />
-        <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.1.js" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="97af9aea-a1d9-4bb7-ae28-a142ea1233c9" name="Changes" comment="" />
-      <created>1666877535565</created>
+      <changelist id="de638fc8-9c22-47bf-a43b-9ff3d9d780f6" name="Changes" comment="" />
+      <created>1708333863750</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1666877535565</updated>
-      <workItem from="1666877537161" duration="1127000" />
-      <workItem from="1666878696263" duration="145000" />
-      <workItem from="1681820724362" duration="322000" />
-      <workItem from="1703335860161" duration="4678000" />
-      <workItem from="1703342858810" duration="181000" />
-      <workItem from="1703343053802" duration="368000" />
-      <workItem from="1703343431711" duration="1887000" />
-      <workItem from="1703844357030" duration="4126000" />
-      <workItem from="1703848495861" duration="144000" />
-      <workItem from="1703848661310" duration="174000" />
-      <workItem from="1703848853437" duration="11938000" />
-      <workItem from="1703927823219" duration="897000" />
-      <workItem from="1703943562322" duration="8292000" />
-      <workItem from="1704036333253" duration="1414000" />
-      <workItem from="1704467051004" duration="8000" />
-      <workItem from="1704467558356" duration="7511000" />
-      <workItem from="1704475091368" duration="8373000" />
-      <workItem from="1704703240591" duration="3390000" />
-      <workItem from="1704719326945" duration="4141000" />
-      <workItem from="1704725492797" duration="6066000" />
-      <workItem from="1704806728897" duration="1409000" />
-      <workItem from="1704812678559" duration="439000" />
-      <workItem from="1704880716817" duration="13000" />
-      <workItem from="1705224667210" duration="11612000" />
-      <workItem from="1705251587730" duration="448000" />
-      <workItem from="1705319968846" duration="7277000" />
-      <workItem from="1705408010248" duration="3527000" />
-      <workItem from="1705411849394" duration="605000" />
-      <workItem from="1705426841320" duration="3075000" />
-      <workItem from="1705486388362" duration="600000" />
-      <workItem from="1705513324797" duration="2783000" />
-      <workItem from="1705567907992" duration="10645000" />
-      <workItem from="1705589712766" duration="13624000" />
-      <workItem from="1705676552530" duration="1803000" />
-      <workItem from="1705912629317" duration="2573000" />
-      <workItem from="1705939889818" duration="5010000" />
-      <workItem from="1706023613596" duration="3355000" />
-      <workItem from="1706083749218" duration="6799000" />
-      <workItem from="1706114553045" duration="2423000" />
-      <workItem from="1706118017217" duration="3000" />
-      <workItem from="1706174005369" duration="2171000" />
-      <workItem from="1706194906396" duration="14328000" />
-      <workItem from="1706261783996" duration="6000" />
-      <workItem from="1706353811862" duration="6081000" />
+      <updated>1708333863750</updated>
+      <workItem from="1708333865467" duration="883000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
